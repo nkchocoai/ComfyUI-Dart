@@ -83,10 +83,10 @@
                 777,
                 127
             ],
-            "size": [
-                382.05463226570555,
-                160.35584438733815
-            ],
+            "size": {
+                "0": 382.05462646484375,
+                "1": 160.35585021972656
+            },
             "flags": {},
             "order": 4,
             "mode": 0,
@@ -118,57 +118,16 @@
             ]
         },
         {
-            "id": 23,
-            "type": "ShowText|pysssss",
-            "pos": [
-                410,
-                280
-            ],
-            "size": [
-                336.2208173767593,
-                113.20250389792699
-            ],
-            "flags": {},
-            "order": 2,
-            "mode": 0,
-            "inputs": [
-                {
-                    "name": "text",
-                    "type": "STRING",
-                    "link": 25,
-                    "widget": {
-                        "name": "text"
-                    },
-                    "slot_index": 0
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "STRING",
-                    "type": "STRING",
-                    "links": null,
-                    "shape": 6
-                }
-            ],
-            "properties": {
-                "Node name for S&R": "ShowText|pysssss"
-            },
-            "widgets_values": [
-                "",
-                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>vocaloid</copyright><character>hatsune miku</character><general><|long|>1girl<|input_end|>"
-            ]
-        },
-        {
             "id": 24,
             "type": "DanbooruTagsTransformerGenerate",
             "pos": [
                 410,
                 127
             ],
-            "size": [
-                278.9416622445601,
-                102
-            ],
+            "size": {
+                "0": 278.941650390625,
+                "1": 144
+            },
             "flags": {},
             "order": 3,
             "mode": 0,
@@ -205,7 +164,49 @@
             "widgets_values": [
                 "<|bos|><rating>rating:sfw, rating:general</rating><copyright>original</copyright><character></character><general><|long|>1girl<|input_end|>",
                 123,
-                "fixed"
+                "fixed",
+                ""
+            ]
+        },
+        {
+            "id": 23,
+            "type": "ShowText|pysssss",
+            "pos": [
+                410,
+                321
+            ],
+            "size": {
+                "0": 336.2208251953125,
+                "1": 113.20250701904297
+            },
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 25,
+                    "widget": {
+                        "name": "text"
+                    },
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": null,
+                    "shape": 6
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "ShowText|pysssss"
+            },
+            "widgets_values": [
+                "",
+                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>vocaloid</copyright><character>hatsune miku</character><general><|long|>1girl<|input_end|>"
             ]
         }
     ],
