@@ -1,5 +1,5 @@
 # ComfyUI-Dart
-![Dart Preview](img/preview.png)  
+![Dart Preview](workflows/dart_generate_with_config.png)  
 - [ComfyUI](https://github.com/comfyanonymous/ComfyUI)用のカスタムノードです。
 - [Dart(Danbooru Tags Transformer)](https://huggingface.co/p1atdev/dart-v1-sft) によりdanbooruタグを生成するノードを追加します。
 
