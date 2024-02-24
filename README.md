@@ -18,7 +18,7 @@ git clone https://github.com/nkchocoai/ComfyUI-Dart.git
   - https://huggingface.co/p1atdev/dart-v1-sft#prompt-guidde
 
 ### Dart Compose Prompt
-- Compose input "prompt" of Dart Generate node.
+- Output input "prompt" of Dart Generate node.
 
 ### Dart Generation Config
 - Output input "config" of Dart Generate node.
