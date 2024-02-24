@@ -2,7 +2,7 @@
 日本語版READMEは[こちら](README.jp.md)。
 
 - Custom node for [ComfyUI](https://github.com/comfyanonymous/ComfyUI).
-- Add nodes that generates prompt by [Dart(Danbooru Tags Transformer)](https://huggingface.co/p1atdev/dart-v1-sft).
+- Add nodes that generates danbooru tags by [Dart(Danbooru Tags Transformer)](https://huggingface.co/p1atdev/dart-v1-sft).
 
 ## Installation
 ```
