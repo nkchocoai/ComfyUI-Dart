@@ -1,0 +1,648 @@
+{
+    "last_node_id": 20,
+    "last_link_id": 16,
+    "nodes": [
+        {
+            "id": 16,
+            "type": "CLIPTextEncode",
+            "pos": [
+                760,
+                452
+            ],
+            "size": {
+                "0": 210,
+                "1": 54
+            },
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "clip",
+                    "type": "CLIP",
+                    "link": null
+                },
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 11,
+                    "widget": {
+                        "name": "text"
+                    },
+                    "slot_index": 1
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "CONDITIONING",
+                    "type": "CONDITIONING",
+                    "links": [
+                        13
+                    ],
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "CLIPTextEncode"
+            },
+            "widgets_values": [
+                ""
+            ]
+        },
+        {
+            "id": 14,
+            "type": "PromptUtilitiesLoadPreset",
+            "pos": [
+                362,
+                475
+            ],
+            "size": {
+                "0": 315,
+                "1": 58
+            },
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": [
+                        11
+                    ],
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "PromptUtilitiesLoadPreset"
+            },
+            "widgets_values": [
+                "sample\\animagineXL : neg"
+            ]
+        },
+        {
+            "id": 15,
+            "type": "CLIPTextEncode",
+            "pos": [
+                756,
+                346
+            ],
+            "size": [
+                210,
+                54
+            ],
+            "flags": {},
+            "order": 10,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "clip",
+                    "type": "CLIP",
+                    "link": null
+                },
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 10,
+                    "widget": {
+                        "name": "text"
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "CONDITIONING",
+                    "type": "CONDITIONING",
+                    "links": [
+                        12
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "CLIPTextEncode"
+            },
+            "widgets_values": [
+                ""
+            ]
+        },
+        {
+            "id": 17,
+            "type": "Prompts Everywhere",
+            "pos": [
+                1031,
+                380
+            ],
+            "size": {
+                "0": 210,
+                "1": 46
+            },
+            "flags": {},
+            "order": 12,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "CONDITIONING",
+                    "type": "*",
+                    "link": 12,
+                    "color_on": "#FFA931"
+                },
+                {
+                    "name": "CONDITIONING",
+                    "type": "*",
+                    "link": 13,
+                    "slot_index": 1,
+                    "color_on": "#FFA931"
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "Prompts Everywhere",
+                "group_restricted": false,
+                "color_restricted": false
+            }
+        },
+        {
+            "id": 19,
+            "type": "VAEDecode",
+            "pos": [
+                768,
+                617
+            ],
+            "size": {
+                "0": 210,
+                "1": 46
+            },
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "samples",
+                    "type": "LATENT",
+                    "link": 15,
+                    "slot_index": 0
+                },
+                {
+                    "name": "vae",
+                    "type": "VAE",
+                    "link": null
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "IMAGE",
+                    "type": "IMAGE",
+                    "links": [
+                        16
+                    ],
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "VAEDecode"
+            }
+        },
+        {
+            "id": 20,
+            "type": "PreviewImage",
+            "pos": [
+                1051,
+                532
+            ],
+            "size": [
+                210,
+                246
+            ],
+            "flags": {},
+            "order": 11,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "images",
+                    "type": "IMAGE",
+                    "link": 16,
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "PreviewImage"
+            }
+        },
+        {
+            "id": 18,
+            "type": "KSampler",
+            "pos": [
+                386,
+                616
+            ],
+            "size": {
+                "0": 315,
+                "1": 262
+            },
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "model",
+                    "type": "MODEL",
+                    "link": null
+                },
+                {
+                    "name": "positive",
+                    "type": "CONDITIONING",
+                    "link": null
+                },
+                {
+                    "name": "negative",
+                    "type": "CONDITIONING",
+                    "link": null
+                },
+                {
+                    "name": "latent_image",
+                    "type": "LATENT",
+                    "link": 14
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "LATENT",
+                    "type": "LATENT",
+                    "links": [
+                        15
+                    ],
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "KSampler"
+            },
+            "widgets_values": [
+                12345,
+                "fixed",
+                25,
+                7,
+                "euler_ancestral",
+                "normal",
+                1
+            ]
+        },
+        {
+            "id": 5,
+            "type": "DanbooruTagsTransformerGenerate",
+            "pos": [
+                385,
+                304
+            ],
+            "size": {
+                "0": 281.36651611328125,
+                "1": 94
+            },
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "prompt",
+                    "type": "STRING",
+                    "link": 9,
+                    "widget": {
+                        "name": "prompt"
+                    },
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": [
+                        5,
+                        10
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "DanbooruTagsTransformerGenerate"
+            },
+            "widgets_values": [
+                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>original</copyright><character></character><general><|long|>1girl<|input_end|>",
+                12345,
+                "fixed"
+            ]
+        },
+        {
+            "id": 8,
+            "type": "CheckpointLoaderSimple",
+            "pos": [
+                32,
+                129
+            ],
+            "size": {
+                "0": 315,
+                "1": 98
+            },
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "outputs": [
+                {
+                    "name": "MODEL",
+                    "type": "MODEL",
+                    "links": [
+                        6
+                    ],
+                    "shape": 3
+                },
+                {
+                    "name": "CLIP",
+                    "type": "CLIP",
+                    "links": [
+                        7
+                    ],
+                    "shape": 3,
+                    "slot_index": 1
+                },
+                {
+                    "name": "VAE",
+                    "type": "VAE",
+                    "links": [
+                        8
+                    ],
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "CheckpointLoaderSimple"
+            },
+            "widgets_values": [
+                "animagine-xl-3.0.safetensors"
+            ]
+        },
+        {
+            "id": 11,
+            "type": "EmptyLatentImageFromPresetsSDXL",
+            "pos": [
+                27,
+                678
+            ],
+            "size": {
+                "0": 315,
+                "1": 122
+            },
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "outputs": [
+                {
+                    "name": "latent",
+                    "type": "LATENT",
+                    "links": [
+                        14
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                },
+                {
+                    "name": "w",
+                    "type": "INT",
+                    "links": null,
+                    "shape": 3
+                },
+                {
+                    "name": "h",
+                    "type": "INT",
+                    "links": null,
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "EmptyLatentImageFromPresetsSDXL"
+            },
+            "widgets_values": [
+                " 832 x 1216",
+                1
+            ]
+        },
+        {
+            "id": 12,
+            "type": "PromptUtilitiesConstStringMultiLine",
+            "pos": [
+                32,
+                304
+            ],
+            "size": [
+                303.10331309925425,
+                121.30459837480021
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": [
+                        9
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "PromptUtilitiesConstStringMultiLine"
+            },
+            "widgets_values": [
+                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>original</copyright><character></character><general><|long|>1girl<|input_end|>"
+            ]
+        },
+        {
+            "id": 7,
+            "type": "ShowText|pysssss",
+            "pos": [
+                731,
+                118
+            ],
+            "size": [
+                517.7396767356179,
+                127.30459837480024
+            ],
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 5,
+                    "widget": {
+                        "name": "text"
+                    },
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": null,
+                    "shape": 6
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "ShowText|pysssss"
+            },
+            "widgets_values": [
+                "",
+                "rating:sfw, rating:general, original, 1girl, arm up, black jacket, blonde hair, blue shirt, blue shirt, braid, closed mouth, colored inner hair, cowboy shot, eyelashes, grey eyes, hair between eyes, hands up, headphones, headphones around neck, jacket, long sleeves, looking at viewer, miniskirt, mole, mole under eye, multicolored hair, open clothes, open jacket, shirt, skirt, solo, split-color hair, standing, striped, striped dress, thigh strap, twin braids, two-tone hair, vertical stripes, vertical-striped shirt, white skirt"
+            ]
+        },
+        {
+            "id": 9,
+            "type": "Anything Everywhere3",
+            "pos": [
+                388,
+                129
+            ],
+            "size": {
+                "0": 210,
+                "1": 66
+            },
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "MODEL",
+                    "type": "*",
+                    "link": 6,
+                    "slot_index": 0,
+                    "color_on": "#B39DDB"
+                },
+                {
+                    "name": "CLIP",
+                    "type": "*",
+                    "link": 7,
+                    "color_on": "#FFD500"
+                },
+                {
+                    "name": "VAE",
+                    "type": "*",
+                    "link": 8,
+                    "slot_index": 2,
+                    "color_on": "#FF6E6E"
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "Anything Everywhere3",
+                "group_restricted": false,
+                "color_restricted": false
+            }
+        }
+    ],
+    "links": [
+        [
+            5,
+            5,
+            0,
+            7,
+            0,
+            "STRING"
+        ],
+        [
+            6,
+            8,
+            0,
+            9,
+            0,
+            "*"
+        ],
+        [
+            7,
+            8,
+            1,
+            9,
+            1,
+            "*"
+        ],
+        [
+            8,
+            8,
+            2,
+            9,
+            2,
+            "*"
+        ],
+        [
+            9,
+            12,
+            0,
+            5,
+            0,
+            "STRING"
+        ],
+        [
+            10,
+            5,
+            0,
+            15,
+            1,
+            "STRING"
+        ],
+        [
+            11,
+            14,
+            0,
+            16,
+            1,
+            "STRING"
+        ],
+        [
+            12,
+            15,
+            0,
+            17,
+            0,
+            "*"
+        ],
+        [
+            13,
+            16,
+            0,
+            17,
+            1,
+            "*"
+        ],
+        [
+            14,
+            11,
+            0,
+            18,
+            3,
+            "LATENT"
+        ],
+        [
+            15,
+            18,
+            0,
+            19,
+            0,
+            "LATENT"
+        ],
+        [
+            16,
+            19,
+            0,
+            20,
+            0,
+            "IMAGE"
+        ]
+    ],
+    "groups": [],
+    "config": {},
+    "extra": {},
+    "version": 0.4
+}
