@@ -1,0 +1,2 @@
+class BaseNode:
+    CATEGORY = "Dart"
