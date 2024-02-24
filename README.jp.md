@@ -17,3 +17,6 @@ git clone https://github.com/nkchocoai/ComfyUI-Dart.git
 
 ### Dart Compose Prompt
 - Dart Generateノードの入力であるpromptを生成します。
+
+### Dart Generation Config
+- Dart Generateノードの入力であるconfigを生成します。
