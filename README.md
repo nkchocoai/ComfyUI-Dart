@@ -16,3 +16,6 @@ git clone https://github.com/nkchocoai/ComfyUI-Dart.git
 - Generate prompt by [Dart(Danbooru Tags Transformer)](https://huggingface.co/p1atdev/dart-v1-sft).
 - See the following URL for the syntax of prompt.
   - https://huggingface.co/p1atdev/dart-v1-sft#prompt-guidde
+
+### Dart Compose Prompt
+- Compose input "prompt" of Dart Generate node.

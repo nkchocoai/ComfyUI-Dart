@@ -14,3 +14,6 @@ git clone https://github.com/nkchocoai/ComfyUI-Dart.git
 - [Dart(Danbooru Tags Transformer)](https://huggingface.co/p1atdev/dart-v1-sft) によりプロンプトを生成します。
 - promptの構文は以下のURLを参照ください。
   - https://huggingface.co/p1atdev/dart-v1-sft#prompt-guidde
+
+### Dart Compose Prompt
+- Dart Generateノードの入力であるpromptを生成します。
