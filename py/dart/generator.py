@@ -22,7 +22,7 @@ class DartGenerator:
             )
 
     @classmethod
-    def generate(cls, prompt, seed):
+    def generate(cls, prompt, seed, config=None):
         cls.load_if_none()
 
         cls.set_seed(seed)
@@ -30,6 +30,10 @@ class DartGenerator:
         inputs = cls.tokenizer(prompt, return_tensors="pt").input_ids
         with torch.no_grad():
             generation_config = cls.model.generation_config
+            if config is not None:
+                generation_config = cls.update_generation_config(
+                    generation_config, config
+                )
             outputs = cls.model.generate(inputs, generation_config=generation_config)
             decoded_output = cls.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
@@ -43,3 +47,13 @@ class DartGenerator:
         torch.manual_seed(seed)
         if n_gpu > 0:
             torch.cuda.manual_seed_all(seed)
+
+    @classmethod
+    def update_generation_config(cls, generation_config, config):
+        # https://huggingface.co/docs/transformers/ja/main_classes/text_generation#transformers.GenerationConfig
+        generation_config.max_new_tokens = config["max_new_tokens"]
+        generation_config.min_new_tokens = config["min_new_tokens"]
+        generation_config.temperature = config["temperature"]
+        generation_config.top_p = config["top_p"]
+        generation_config.top_k = config["top_k"]
+        generation_config.num_beams = config["num_beams"]
