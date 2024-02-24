@@ -57,3 +57,4 @@ class DartGenerator:
         generation_config.top_p = config["top_p"]
         generation_config.top_k = config["top_k"]
         generation_config.num_beams = config["num_beams"]
+        return generation_config
