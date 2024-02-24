@@ -22,6 +22,14 @@ class DanbooruTagsTransformerGenerate(BaseNode):
             },
             "optional": {
                 "setting": ("DART SETTING",),
+                "ban_tags": (
+                    "STRING",
+                    {
+                        "default": "",
+                        "display": "ban tags",
+                        "multiline": True,
+                    },
+                ),
             },
         }
 
@@ -30,8 +38,8 @@ class DanbooruTagsTransformerGenerate(BaseNode):
     RETURN_TYPES = ("STRING",)
     FUNCTION = "generate"
 
-    def generate(self, prompt, seed, setting=None):
-        result = DartGenerator.generate(prompt, seed, setting)
+    def generate(self, prompt, seed, setting=None, ban_tags=""):
+        result = DartGenerator.generate(prompt, seed, setting, ban_tags)
         return (result,)
 
 

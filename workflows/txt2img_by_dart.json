@@ -551,7 +551,7 @@
             ],
             "size": {
                 "0": 277.2727355957031,
-                "1": 102
+                "1": 144
             },
             "flags": {},
             "order": 8,
@@ -590,7 +590,8 @@
             "widgets_values": [
                 "<|bos|><rating>rating:sfw, rating:general</rating><copyright>original</copyright><character></character><general><|long|>1girl<|input_end|>",
                 12345,
-                "fixed"
+                "fixed",
+                ""
             ]
         }
     ],

@@ -22,19 +22,27 @@ class DartGenerator:
             )
 
     @classmethod
-    def generate(cls, prompt, seed, config=None):
+    def generate(cls, prompt, seed, config=None, ban_tags=""):
         cls.load_if_none()
 
         cls.set_seed(seed)
 
         inputs = cls.tokenizer(prompt, return_tensors="pt").input_ids
+        bad_words_ids = cls.tokenizer.encode_plus(ban_tags).input_ids
+        if len(bad_words_ids) == 0:
+            bad_words_ids = None
+        else:
+            bad_words_ids = [[token] for token in bad_words_ids]
+
         with torch.no_grad():
             generation_config = cls.model.generation_config
             if config is not None:
                 generation_config = cls.update_generation_config(
                     generation_config, config
                 )
-            outputs = cls.model.generate(inputs, generation_config=generation_config)
+            outputs = cls.model.generate(
+                inputs, generation_config=generation_config, bad_words_ids=bad_words_ids
+            )
             decoded_output = cls.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
         return decoded_output
