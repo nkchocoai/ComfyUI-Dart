@@ -1,6 +1,6 @@
 {
-    "last_node_id": 23,
-    "last_link_id": 25,
+    "last_node_id": 24,
+    "last_link_id": 28,
     "nodes": [
         {
             "id": 15,
@@ -25,7 +25,7 @@
                 {
                     "name": "text",
                     "type": "STRING",
-                    "link": 10,
+                    "link": 27,
                     "widget": {
                         "name": "text"
                     }
@@ -396,7 +396,7 @@
                 {
                     "name": "text",
                     "type": "STRING",
-                    "link": 5,
+                    "link": 26,
                     "widget": {
                         "name": "text"
                     },
@@ -471,12 +471,12 @@
                 -7,
                 521
             ],
-            "size": [
-                364,
-                132
-            ],
+            "size": {
+                "0": 364,
+                "1": 132
+            },
             "flags": {},
-            "order": 8,
+            "order": 7,
             "mode": 0,
             "inputs": [
                 {
@@ -524,8 +524,8 @@
                     "name": "STRING",
                     "type": "STRING",
                     "links": [
-                        18,
-                        25
+                        25,
+                        28
                     ],
                     "shape": 3,
                     "slot_index": 0
@@ -543,28 +543,33 @@
             ]
         },
         {
-            "id": 5,
+            "id": 24,
             "type": "DanbooruTagsTransformerGenerate",
             "pos": [
-                385,
-                304
+                391,
+                279
             ],
             "size": {
-                "0": 281.36651611328125,
-                "1": 94
+                "0": 277.2727355957031,
+                "1": 102
             },
             "flags": {},
-            "order": 7,
+            "order": 8,
             "mode": 0,
             "inputs": [
                 {
+                    "name": "setting",
+                    "type": "DART SETTING",
+                    "link": null
+                },
+                {
                     "name": "prompt",
                     "type": "STRING",
-                    "link": 18,
+                    "link": 28,
                     "widget": {
                         "name": "prompt"
                     },
-                    "slot_index": 0
+                    "slot_index": 1
                 }
             ],
             "outputs": [
@@ -572,8 +577,8 @@
                     "name": "STRING",
                     "type": "STRING",
                     "links": [
-                        5,
-                        10
+                        26,
+                        27
                     ],
                     "shape": 3,
                     "slot_index": 0
@@ -590,14 +595,6 @@
         }
     ],
     "links": [
-        [
-            5,
-            5,
-            0,
-            7,
-            0,
-            "STRING"
-        ],
         [
             6,
             8,
@@ -621,14 +618,6 @@
             9,
             2,
             "*"
-        ],
-        [
-            10,
-            5,
-            0,
-            15,
-            1,
-            "STRING"
         ],
         [
             11,
@@ -677,14 +666,6 @@
             20,
             0,
             "IMAGE"
-        ],
-        [
-            18,
-            22,
-            0,
-            5,
-            0,
-            "STRING"
         ],
         [
             19,
@@ -740,6 +721,30 @@
             0,
             23,
             0,
+            "STRING"
+        ],
+        [
+            26,
+            24,
+            0,
+            7,
+            0,
+            "STRING"
+        ],
+        [
+            27,
+            24,
+            0,
+            15,
+            1,
+            "STRING"
+        ],
+        [
+            28,
+            22,
+            0,
+            24,
+            1,
             "STRING"
         ]
     ],
