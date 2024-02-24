@@ -1,5 +1,5 @@
 # ComfyUI-Dart
-![Dart Preview](img/preview.png)  
+![Dart Preview](workflows/dart_generate_with_config.png)  
 日本語版READMEは[こちら](README.jp.md)。
 
 - Custom node for [ComfyUI](https://github.com/comfyanonymous/ComfyUI).
@@ -18,4 +18,7 @@ git clone https://github.com/nkchocoai/ComfyUI-Dart.git
   - https://huggingface.co/p1atdev/dart-v1-sft#prompt-guidde
 
 ### Dart Compose Prompt
-- Compose input "prompt" of Dart Generate node.
+- Output input "prompt" of Dart Generate node.
+
+### Dart Generation Config
+- Output input "config" of Dart Generate node.
