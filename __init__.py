@@ -6,7 +6,10 @@ from .py.nodes.advanced.decode import (
     DanbooruTagsTransformerDecode,
     DanbooruTagsTransformerDecodeBySplitedParts,
 )
-from .py.nodes.advanced.token_ids import DanbooruTagsTransformerRearrangedByAnimagine
+from .py.nodes.advanced.token_ids import (
+    DanbooruTagsTransformerRearrangedByAnimagine,
+    DanbooruTagsTransformerRemoveTagToken,
+)
 
 NODE_CLASS_MAPPINGS = {
     "DanbooruTagsTransformerGenerate": DanbooruTagsTransformerGenerate,
@@ -15,8 +18,9 @@ NODE_CLASS_MAPPINGS = {
     # Advanced
     "DanbooruTagsTransformerGenerateAdvanced": DanbooruTagsTransformerGenerateAdvanced,
     "DanbooruTagsTransformerDecode": DanbooruTagsTransformerDecode,
-    "DanbooruTagsTransformerRearrangedByAnimagine": DanbooruTagsTransformerRearrangedByAnimagine,
     "DanbooruTagsTransformerDecodeBySplitedParts": DanbooruTagsTransformerDecodeBySplitedParts,
+    "DanbooruTagsTransformerRearrangedByAnimagine": DanbooruTagsTransformerRearrangedByAnimagine,
+    "DanbooruTagsTransformerRemoveTagToken": DanbooruTagsTransformerRemoveTagToken,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -26,8 +30,9 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     # Advanced
     "DanbooruTagsTransformerGenerateAdvanced": "Dart Generate(Advanced)",
     "DanbooruTagsTransformerDecode": "Dart Decode",
-    "DanbooruTagsTransformerRearrangedByAnimagine": "Dart Rearranged By Animagine",
     "DanbooruTagsTransformerDecodeBySplitedParts": "Dart Decode By Splited Parts",
+    "DanbooruTagsTransformerRearrangedByAnimagine": "Dart Rearranged By Animagine",
+    "DanbooruTagsTransformerRemoveTagToken": "Dart Remove Tag Token",
 }
 
 __all__ = ["NODE_CLASS_MAPPINGS", "NODE_DISPLAY_NAME_MAPPINGS"]
