@@ -118,47 +118,6 @@
             ]
         },
         {
-            "id": 23,
-            "type": "ShowText|pysssss",
-            "pos": [
-                410,
-                354
-            ],
-            "size": {
-                "0": 336.2208251953125,
-                "1": 113.20250701904297
-            },
-            "flags": {},
-            "order": 2,
-            "mode": 0,
-            "inputs": [
-                {
-                    "name": "text",
-                    "type": "STRING",
-                    "link": 25,
-                    "widget": {
-                        "name": "text"
-                    },
-                    "slot_index": 0
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "STRING",
-                    "type": "STRING",
-                    "links": null,
-                    "shape": 6
-                }
-            ],
-            "properties": {
-                "Node name for S&R": "ShowText|pysssss"
-            },
-            "widgets_values": [
-                "",
-                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>vocaloid</copyright><character>hatsune miku</character><general><|long|>1girl<|input_end|>"
-            ]
-        },
-        {
             "id": 24,
             "type": "DanbooruTagsTransformerGenerate",
             "pos": [
@@ -167,7 +126,7 @@
             ],
             "size": {
                 "0": 278.941650390625,
-                "1": 168
+                "1": 218
             },
             "flags": {},
             "order": 3,
@@ -207,7 +166,49 @@
                 123,
                 "fixed",
                 true,
+                "",
                 ""
+            ]
+        },
+        {
+            "id": 23,
+            "type": "ShowText|pysssss",
+            "pos": [
+                410,
+                390
+            ],
+            "size": {
+                "0": 336.2208251953125,
+                "1": 113.20250701904297
+            },
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 25,
+                    "widget": {
+                        "name": "text"
+                    },
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": null,
+                    "shape": 6
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "ShowText|pysssss"
+            },
+            "widgets_values": [
+                "",
+                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>vocaloid</copyright><character>hatsune miku</character><general><|long|>1girl<|input_end|>"
             ]
         }
     ],
