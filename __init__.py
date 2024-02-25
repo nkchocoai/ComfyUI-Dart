@@ -1,8 +1,6 @@
-from .py.nodes.node import (
-    DanbooruTagsTransformerGenerate,
-    DanbooruTagsTransformerComposePrompt,
-    DanbooruTagsTransformerGenerationConfig,
-)
+from .py.nodes.generate import DanbooruTagsTransformerGenerate
+from .py.nodes.prompt import DanbooruTagsTransformerComposePrompt
+from .py.nodes.config import DanbooruTagsTransformerGenerationConfig
 
 NODE_CLASS_MAPPINGS = {
     "DanbooruTagsTransformerGenerate": DanbooruTagsTransformerGenerate,
