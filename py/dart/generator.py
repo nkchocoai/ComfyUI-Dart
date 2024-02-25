@@ -2,6 +2,8 @@ import numpy as np
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
 
+from .decode import DartDecoder
+
 
 class DartGenerator:
     MODEL_NAME = "p1atdev/dart-v1-sft"
@@ -15,6 +17,7 @@ class DartGenerator:
             cls.tokenizer = AutoTokenizer.from_pretrained(
                 cls.MODEL_NAME, trust_remote_code=True
             )
+            DartDecoder.init(cls.tokenizer)
 
         if cls.model is None:
             cls.model = AutoModelForCausalLM.from_pretrained(
@@ -45,10 +48,6 @@ class DartGenerator:
             )
 
         return outputs
-
-    @classmethod
-    def decode(cls, outputs):
-        return cls.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
     # refer. https://github.com/huggingface/transformers/blob/6b1ff250842f52136d5159bb67a26b50ba01485d/examples/run_generation.py#L74
     @classmethod

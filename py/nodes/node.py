@@ -1,4 +1,5 @@
 from ..dart.generator import DartGenerator
+from ..dart.decode import DartDecoder
 from ..dart.prompt import DartPromptComposer
 from ..dart.defs.combo import RATINGS, LENGTHS
 
@@ -19,6 +20,13 @@ class DanbooruTagsTransformerGenerate(BaseNode):
                     },
                 ),
                 "seed": ("INT", {"default": 0, "min": 0, "max": 2**32 - 1}),
+                "animagine_order": (
+                    "BOOLEAN",
+                    {
+                        "default": True,
+                        "display": "animagine order",
+                    },
+                ),
             },
             "optional": {
                 "setting": ("DART SETTING",),
@@ -38,9 +46,13 @@ class DanbooruTagsTransformerGenerate(BaseNode):
     RETURN_TYPES = ("STRING",)
     FUNCTION = "generate"
 
-    def generate(self, prompt, seed, setting=None, ban_tags=""):
+    def generate(self, prompt, seed, animagine_order=True, setting=None, ban_tags=""):
         outputs = DartGenerator.generate(prompt, seed, setting, ban_tags)
-        result = DartGenerator.decode(outputs)
+        print(outputs)
+        if animagine_order:
+            result = DartDecoder.decode_by_animagine(outputs)
+        else:
+            result = DartDecoder.decode(outputs)
         return (result,)
 
 
