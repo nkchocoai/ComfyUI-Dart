@@ -1,4 +1,4 @@
-from .definitions import RATINGS, LENGTHS
+from .defs.combo import RATINGS, LENGTHS
 
 
 class DartPromptComposer:

@@ -43,9 +43,12 @@ class DartGenerator:
             outputs = cls.model.generate(
                 inputs, generation_config=generation_config, bad_words_ids=bad_words_ids
             )
-            decoded_output = cls.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
-        return decoded_output
+        return outputs
+
+    @classmethod
+    def decode(cls, outputs):
+        return cls.tokenizer.decode(outputs[0], skip_special_tokens=True)
 
     # refer. https://github.com/huggingface/transformers/blob/6b1ff250842f52136d5159bb67a26b50ba01485d/examples/run_generation.py#L74
     @classmethod

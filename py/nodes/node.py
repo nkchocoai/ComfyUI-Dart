@@ -1,6 +1,6 @@
 from ..dart.generator import DartGenerator
 from ..dart.prompt import DartPromptComposer
-from ..dart.definitions import RATINGS, LENGTHS
+from ..dart.defs.combo import RATINGS, LENGTHS
 
 from .base import BaseNode
 
@@ -39,7 +39,8 @@ class DanbooruTagsTransformerGenerate(BaseNode):
     FUNCTION = "generate"
 
     def generate(self, prompt, seed, setting=None, ban_tags=""):
-        result = DartGenerator.generate(prompt, seed, setting, ban_tags)
+        outputs = DartGenerator.generate(prompt, seed, setting, ban_tags)
+        result = DartGenerator.decode(outputs)
         return (result,)
 
 
