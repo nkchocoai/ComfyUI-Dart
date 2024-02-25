@@ -46,5 +46,4 @@ def load_tags(path):
 
 
 assets_dir = os.path.join(os.path.abspath(os.path.dirname(__file__)), "assets")
-print(assets_dir)
 PEOPLE_TAGS_LIST = load_tags(os.path.join(assets_dir, "people.txt"))

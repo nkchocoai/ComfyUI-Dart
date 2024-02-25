@@ -39,5 +39,4 @@ class DanbooruTagsTransformerGenerationConfig(BaseNode):
     FUNCTION = "compose"
 
     def compose(self, **kwargs):
-        print(kwargs)
         return (kwargs,)
