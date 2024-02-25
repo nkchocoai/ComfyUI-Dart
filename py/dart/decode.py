@@ -27,15 +27,23 @@ class DartDecoder:
         return cls.tokenizer.convert_tokens_to_ids(tags_list)
 
     @classmethod
-    def decode(cls, outputs, skip_special_tokens=True):
-        token_ids = outputs[0]
+    def decode(cls, token_ids, skip_special_tokens=True):
         return cls.tokenizer.decode(token_ids, skip_special_tokens=skip_special_tokens)
 
     # refer. https://huggingface.co/spaces/p1atdev/danbooru-tags-transformer/blob/main/app.py#L218-L267
     @classmethod
-    def decode_by_animagine(cls, outputs):
-        token_ids = outputs[0]
+    def decode_by_animagine(cls, token_ids):
+        rearranged_tokens = cls.rearrange_by_animagine(token_ids)
 
+        decoded = cls.tokenizer.decode(rearranged_tokens, skip_special_tokens=True)
+
+        # fix "nsfw" tag
+        decoded = decoded.replace("rating:nsfw", "nsfw")
+
+        return decoded
+
+    @classmethod
+    def rearrange_by_animagine(cls, token_ids):
         (
             rating_part,
             copyright_part,
@@ -57,12 +65,7 @@ class DartDecoder:
             token for token in rearranged_tokens if token not in special_tag_ids
         ]
 
-        decoded = cls.tokenizer.decode(rearranged_tokens, skip_special_tokens=True)
-
-        # fix "nsfw" tag
-        decoded = decoded.replace("rating:nsfw", "nsfw")
-
-        return decoded
+        return rearranged_tokens
 
     @classmethod
     def split_parts(cls, token_ids):
