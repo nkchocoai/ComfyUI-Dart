@@ -79,9 +79,9 @@
                 }
             ],
             "properties": {
+                "Node name for S&R": "Prompts Everywhere",
                 "group_restricted": false,
-                "color_restricted": false,
-                "Node name for S&R": "Prompts Everywhere"
+                "color_restricted": false
             }
         },
         {
@@ -96,7 +96,7 @@
                 "1": 262
             },
             "flags": {},
-            "order": 6,
+            "order": 5,
             "mode": 0,
             "inputs": [
                 {
@@ -228,9 +228,9 @@
                 }
             ],
             "properties": {
+                "Node name for S&R": "Anything Everywhere3",
                 "group_restricted": false,
-                "color_restricted": false,
-                "Node name for S&R": "Anything Everywhere3"
+                "color_restricted": false
             }
         },
         {
@@ -245,7 +245,7 @@
                 "1": 54
             },
             "flags": {},
-            "order": 5,
+            "order": 8,
             "mode": 0,
             "inputs": [
                 {
@@ -305,37 +305,6 @@
             "properties": {
                 "Node name for S&R": "PreviewImage"
             }
-        },
-        {
-            "id": 14,
-            "type": "PromptUtilitiesLoadPreset",
-            "pos": [
-                386,
-                465
-            ],
-            "size": {
-                "0": 282.4613342285156,
-                "1": 58
-            },
-            "flags": {},
-            "order": 1,
-            "mode": 0,
-            "outputs": [
-                {
-                    "name": "STRING",
-                    "type": "STRING",
-                    "links": [
-                        11
-                    ],
-                    "shape": 3
-                }
-            ],
-            "properties": {
-                "Node name for S&R": "PromptUtilitiesLoadPreset"
-            },
-            "widgets_values": [
-                "sample\\animagineXL : neg"
-            ]
         },
         {
             "id": 19,
@@ -416,7 +385,7 @@
             },
             "widgets_values": [
                 "",
-                "rating:sfw, rating:general, vocaloid, hatsune miku, 1girl, aqua eyes, aqua hair, aqua necktie, arm up, bare shoulders, black skirt, black sleeves, black thighhighs, collared shirt, detached sleeves, grey skirt, hair between eyes, hatsune miku (cosplay), headphones, headset, headset, headset, long hair, miniskirt, necktie, open mouth, pleated skirt, shirt, skirt, sleeveless, sleeveless shirt, solo, thighhighs, twintails, very long hair, white background, white shirt, yellow background, zettai ryouiki"
+                "1girl, hatsune miku, vocaloid, aqua eyes, aqua hair, aqua necktie, arm up, bare shoulders, black skirt, black sleeves, black thighhighs, collared shirt, detached sleeves, grey skirt, hair between eyes, hatsune miku (cosplay), headphones, headset, headset, headset, long hair, miniskirt, necktie, open mouth, pleated skirt, shirt, skirt, sleeveless, sleeveless shirt, solo, thighhighs, twintails, very long hair, white background, white shirt, yellow background, zettai ryouiki, rating:sfw, rating:general"
             ]
         },
         {
@@ -431,7 +400,7 @@
                 "1": 122
             },
             "flags": {},
-            "order": 2,
+            "order": 1,
             "mode": 0,
             "outputs": [
                 {
@@ -476,7 +445,7 @@
                 "1": 132
             },
             "flags": {},
-            "order": 7,
+            "order": 6,
             "mode": 0,
             "inputs": [
                 {
@@ -517,7 +486,7 @@
                 "1": 188
             },
             "flags": {},
-            "order": 3,
+            "order": 2,
             "mode": 0,
             "outputs": [
                 {
@@ -543,6 +512,37 @@
             ]
         },
         {
+            "id": 14,
+            "type": "PromptUtilitiesLoadPreset",
+            "pos": [
+                388,
+                497
+            ],
+            "size": {
+                "0": 282.4613342285156,
+                "1": 58
+            },
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": [
+                        11
+                    ],
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "PromptUtilitiesLoadPreset"
+            },
+            "widgets_values": [
+                "sample\\animagineXL : neg"
+            ]
+        },
+        {
             "id": 24,
             "type": "DanbooruTagsTransformerGenerate",
             "pos": [
@@ -551,10 +551,10 @@
             ],
             "size": {
                 "0": 277.2727355957031,
-                "1": 144
+                "1": 168
             },
             "flags": {},
-            "order": 8,
+            "order": 7,
             "mode": 0,
             "inputs": [
                 {
@@ -591,6 +591,7 @@
                 "<|bos|><rating>rating:sfw, rating:general</rating><copyright>original</copyright><character></character><general><|long|>1girl<|input_end|>",
                 12345,
                 "fixed",
+                true,
                 ""
             ]
         }
