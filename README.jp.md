@@ -11,7 +11,7 @@ git clone https://github.com/nkchocoai/ComfyUI-Dart.git
 
 ## Nodes
 ### Dart Generate
-- [Dart(Danbooru Tags Transformer)](https://huggingface.co/p1atdev/dart-v1-sft) によりプロンプトを生成します。
+- [Dart(Danbooru Tags Transformer)](https://huggingface.co/p1atdev/dart-v1-sft) によりdanbooruタグを生成します。
 - promptの構文は以下のURLを参照ください。
   - https://huggingface.co/p1atdev/dart-v1-sft#prompt-guidde
 
@@ -20,3 +20,17 @@ git clone https://github.com/nkchocoai/ComfyUI-Dart.git
 
 ### Dart Generation Config
 - Dart Generateノードの入力であるconfigを生成します。
+
+### Dart Generate(Advanced)
+- [Dart(Danbooru Tags Transformer)](https://huggingface.co/p1atdev/dart-v1-sft) により生成されたdanbooruタグのトークンID列を出力します。
+- promptの構文は以下のURLを参照ください。
+  - https://huggingface.co/p1atdev/dart-v1-sft#prompt-guidde
+
+### Dart Decode
+- トークンID列をデコードします。
+
+### Dart Rearranged By Animagine
+- トークンID列をAnimagineのプロンプト順にソートします。
+
+### Dart Decode By Splited Parts
+- 要素ごとに分割したトークンID列をデコードした文字列を出力します。
