@@ -7,7 +7,7 @@
             "type": "DanbooruTagsTransformerComposePrompt",
             "pos": [
                 35,
-                355
+                354
             ],
             "size": {
                 "0": 318,
@@ -114,7 +114,48 @@
             },
             "widgets_values": [
                 "",
-                "rating:sfw, rating:general, vocaloid, hatsune miku, 1girl, :q, apron, aqua eyes, aqua hair, aqua necktie, bare shoulders, black belt, black bow, black pants, blush, bow, breasts, collared shirt, detached sleeves, hair bow, hair ornament, hands up, headphones, headset, heart, heart-shaped eyes, long hair, long sleeves, looking at viewer, medium breasts, necktie, pants, shirt, simple background, sleeveless, sleeveless shirt, smile, solo, tongue, two-tone shirt, very long hair, white background, white shirt"
+                "1girl, hatsune miku, vocaloid, :q, apron, aqua eyes, aqua hair, aqua necktie, bare shoulders, black belt, black bow, black pants, blush, bow, breasts, collared shirt, detached sleeves, hair bow, hair ornament, hands up, headphones, headset, heart, heart-shaped eyes, long hair, long sleeves, looking at viewer, medium breasts, necktie, pants, shirt, simple background, sleeveless, sleeveless shirt, smile, solo, tongue, two-tone shirt, very long hair, white background, white shirt, rating:sfw, rating:general"
+            ]
+        },
+        {
+            "id": 23,
+            "type": "ShowText|pysssss",
+            "pos": [
+                410,
+                354
+            ],
+            "size": {
+                "0": 336.2208251953125,
+                "1": 113.20250701904297
+            },
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 25,
+                    "widget": {
+                        "name": "text"
+                    },
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": null,
+                    "shape": 6
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "ShowText|pysssss"
+            },
+            "widgets_values": [
+                "",
+                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>vocaloid</copyright><character>hatsune miku</character><general><|long|>1girl<|input_end|>"
             ]
         },
         {
@@ -126,7 +167,7 @@
             ],
             "size": {
                 "0": 278.941650390625,
-                "1": 144
+                "1": 168
             },
             "flags": {},
             "order": 3,
@@ -165,48 +206,8 @@
                 "<|bos|><rating>rating:sfw, rating:general</rating><copyright>original</copyright><character></character><general><|long|>1girl<|input_end|>",
                 123,
                 "fixed",
+                true,
                 ""
-            ]
-        },
-        {
-            "id": 23,
-            "type": "ShowText|pysssss",
-            "pos": [
-                410,
-                321
-            ],
-            "size": {
-                "0": 336.2208251953125,
-                "1": 113.20250701904297
-            },
-            "flags": {},
-            "order": 2,
-            "mode": 0,
-            "inputs": [
-                {
-                    "name": "text",
-                    "type": "STRING",
-                    "link": 25,
-                    "widget": {
-                        "name": "text"
-                    },
-                    "slot_index": 0
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "STRING",
-                    "type": "STRING",
-                    "links": null,
-                    "shape": 6
-                }
-            ],
-            "properties": {
-                "Node name for S&R": "ShowText|pysssss"
-            },
-            "widgets_values": [
-                "",
-                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>vocaloid</copyright><character>hatsune miku</character><general><|long|>1girl<|input_end|>"
             ]
         }
     ],
