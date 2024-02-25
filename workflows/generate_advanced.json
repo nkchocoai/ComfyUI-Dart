@@ -40,7 +40,7 @@
             },
             "widgets_values": [
                 "",
-                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>vocaloid</copyright><character>hatsune miku</character><general><|long|>1girl, ocean<|input_end|>"
+                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>vocaloid</copyright><character>hatsune miku</character><general><|long|>1girl<|input_end|>"
             ]
         },
         {
@@ -81,7 +81,7 @@
             },
             "widgets_values": [
                 "",
-                "rating:sfw, rating:general, vocaloid, hatsune miku, 1girl, ocean, :3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, outdoors, parted lips, sleeveless dress, sleeveless, solo, speech bubble, sparkler, standing, sweat, twintails, very long hair, wand, white dress"
+                "rating:sfw, rating:general, vocaloid, hatsune miku, 1girl, :3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, long sleeves, looking at viewer, musical note, neck ribbon, orange eyes, orange rose, outstretched arm, parted lips, pinafore dress, ribbon, short dress, sleeveless, sleeveless dress, smile, solo, standing, striped, striped jacket, twintails, very long hair, white background"
             ]
         },
         {
@@ -122,7 +122,7 @@
             },
             "widgets_values": [
                 "",
-                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>vocaloid</copyright><character>hatsune miku</character><general><|long|>1girl, ocean<|input_end|>:3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, outdoors, parted lips, sleeveless dress, sleeveless, solo, speech bubble, sparkler, standing, sweat, twintails, very long hair, wand, white dress</general><|eos|>"
+                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>vocaloid</copyright><character>hatsune miku</character><general><|long|>1girl<|input_end|>:3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, long sleeves, looking at viewer, musical note, neck ribbon, orange eyes, orange rose, outstretched arm, parted lips, pinafore dress, ribbon, short dress, sleeveless, sleeveless dress, smile, solo, standing, striped, striped jacket, twintails, very long hair, white background</general><|eos|>"
             ]
         },
         {
@@ -591,7 +591,7 @@
             },
             "widgets_values": [
                 "",
-                "1girl, hatsune miku, vocaloid, ocean, :3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, outdoors, parted lips, sleeveless dress, sleeveless, solo, speech bubble, sparkler, standing, sweat, twintails, very long hair, wand, white dress, rating:sfw, rating:general"
+                "1girl, hatsune miku, vocaloid, :3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, long sleeves, looking at viewer, musical note, neck ribbon, orange eyes, orange rose, outstretched arm, parted lips, pinafore dress, ribbon, short dress, sleeveless, sleeveless dress, smile, solo, standing, striped, striped jacket, twintails, very long hair, white background, rating:sfw, rating:general"
             ]
         },
         {
@@ -737,7 +737,7 @@
             },
             "widgets_values": [
                 "",
-                "1girl, hatsune miku, vocaloid, ocean, :3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, outdoors, parted lips, sleeveless dress, sleeveless, solo, speech bubble, sparkler, standing, sweat, twintails, very long hair, wand, white dress, rating:sfw, rating:general"
+                "1girl, hatsune miku, vocaloid, :3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, long sleeves, looking at viewer, musical note, neck ribbon, orange eyes, orange rose, outstretched arm, parted lips, pinafore dress, ribbon, short dress, sleeveless, sleeveless dress, smile, solo, standing, striped, striped jacket, twintails, very long hair, white background, rating:sfw, rating:general"
             ]
         },
         {
@@ -819,7 +819,7 @@
             },
             "widgets_values": [
                 "",
-                "ocean, :3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, outdoors, parted lips, sleeveless dress, sleeveless, solo, speech bubble, sparkler, standing, sweat, twintails, very long hair, wand, white dress"
+                ":3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, long sleeves, looking at viewer, musical note, neck ribbon, orange eyes, orange rose, outstretched arm, parted lips, pinafore dress, ribbon, short dress, sleeveless, sleeveless dress, smile, solo, standing, striped, striped jacket, twintails, very long hair, white background"
             ]
         },
         {
@@ -857,7 +857,7 @@
                 "vocaloid",
                 "hatsune miku",
                 "long",
-                "1girl, ocean"
+                "1girl"
             ]
         }
     ],
