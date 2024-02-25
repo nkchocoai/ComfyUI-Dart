@@ -1,6 +1,6 @@
 {
-    "last_node_id": 45,
-    "last_link_id": 49,
+    "last_node_id": 48,
+    "last_link_id": 53,
     "nodes": [
         {
             "id": 23,
@@ -41,88 +41,6 @@
             "widgets_values": [
                 "",
                 "<|bos|><rating>rating:sfw, rating:general</rating><copyright>vocaloid</copyright><character>hatsune miku</character><general><|long|>1girl<|input_end|>"
-            ]
-        },
-        {
-            "id": 29,
-            "type": "ShowText|pysssss",
-            "pos": [
-                1263,
-                223
-            ],
-            "size": {
-                "0": 382.05462646484375,
-                "1": 160.35585021972656
-            },
-            "flags": {},
-            "order": 10,
-            "mode": 0,
-            "inputs": [
-                {
-                    "name": "text",
-                    "type": "STRING",
-                    "link": 34,
-                    "widget": {
-                        "name": "text"
-                    },
-                    "slot_index": 0
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "STRING",
-                    "type": "STRING",
-                    "links": null,
-                    "shape": 6
-                }
-            ],
-            "properties": {
-                "Node name for S&R": "ShowText|pysssss"
-            },
-            "widgets_values": [
-                "",
-                "rating:sfw, rating:general, vocaloid, hatsune miku, 1girl, :3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, long sleeves, looking at viewer, musical note, neck ribbon, orange eyes, orange rose, outstretched arm, parted lips, pinafore dress, ribbon, short dress, sleeveless, sleeveless dress, smile, solo, standing, striped, striped jacket, twintails, very long hair, white background"
-            ]
-        },
-        {
-            "id": 30,
-            "type": "ShowText|pysssss",
-            "pos": [
-                1262,
-                435
-            ],
-            "size": {
-                "0": 382.05462646484375,
-                "1": 160.35585021972656
-            },
-            "flags": {},
-            "order": 11,
-            "mode": 0,
-            "inputs": [
-                {
-                    "name": "text",
-                    "type": "STRING",
-                    "link": 35,
-                    "widget": {
-                        "name": "text"
-                    },
-                    "slot_index": 0
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "STRING",
-                    "type": "STRING",
-                    "links": null,
-                    "shape": 6
-                }
-            ],
-            "properties": {
-                "Node name for S&R": "ShowText|pysssss"
-            },
-            "widgets_values": [
-                "",
-                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>vocaloid</copyright><character>hatsune miku</character><general><|long|>1girl<|input_end|>:3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, long sleeves, looking at viewer, musical note, neck ribbon, orange eyes, orange rose, outstretched arm, parted lips, pinafore dress, ribbon, short dress, sleeveless, sleeveless dress, smile, solo, standing, striped, striped jacket, twintails, very long hair, white background</general><|eos|>"
             ]
         },
         {
@@ -167,8 +85,8 @@
             "id": 28,
             "type": "DanbooruTagsTransformerDecode",
             "pos": [
-                839,
-                468
+                1380,
+                460
             ],
             "size": {
                 "0": 222.96737670898438,
@@ -200,45 +118,6 @@
             },
             "widgets_values": [
                 false
-            ]
-        },
-        {
-            "id": 27,
-            "type": "DanbooruTagsTransformerDecode",
-            "pos": [
-                839,
-                361
-            ],
-            "size": {
-                "0": 222.96737670898438,
-                "1": 58
-            },
-            "flags": {},
-            "order": 6,
-            "mode": 0,
-            "inputs": [
-                {
-                    "name": "token_ids",
-                    "type": "DART_TOKEN_IDS",
-                    "link": 32,
-                    "slot_index": 0
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "STRING",
-                    "type": "STRING",
-                    "links": [
-                        34
-                    ],
-                    "shape": 3
-                }
-            ],
-            "properties": {
-                "Node name for S&R": "DanbooruTagsTransformerDecode"
-            },
-            "widgets_values": [
-                true
             ]
         },
         {
@@ -290,7 +169,7 @@
                 "1": 58
             },
             "flags": {},
-            "order": 12,
+            "order": 13,
             "mode": 0,
             "inputs": [
                 {
@@ -329,7 +208,7 @@
                 "1": 82
             },
             "flags": {},
-            "order": 18,
+            "order": 20,
             "mode": 0,
             "inputs": [
                 {
@@ -442,7 +321,7 @@
                 "1": 76
             },
             "flags": {},
-            "order": 13,
+            "order": 14,
             "mode": 0,
             "inputs": [
                 {
@@ -483,7 +362,7 @@
                 "1": 76
             },
             "flags": {},
-            "order": 15,
+            "order": 16,
             "mode": 0,
             "inputs": [
                 {
@@ -524,7 +403,7 @@
                 "1": 76
             },
             "flags": {},
-            "order": 14,
+            "order": 15,
             "mode": 0,
             "inputs": [
                 {
@@ -565,7 +444,7 @@
                 "1": 160.35585021972656
             },
             "flags": {},
-            "order": 19,
+            "order": 22,
             "mode": 0,
             "inputs": [
                 {
@@ -684,7 +563,8 @@
                         32,
                         33,
                         36,
-                        44
+                        44,
+                        53
                     ],
                     "shape": 3
                 }
@@ -700,47 +580,6 @@
             ]
         },
         {
-            "id": 7,
-            "type": "ShowText|pysssss",
-            "pos": [
-                777,
-                127
-            ],
-            "size": {
-                "0": 382.05462646484375,
-                "1": 160.35585021972656
-            },
-            "flags": {},
-            "order": 5,
-            "mode": 0,
-            "inputs": [
-                {
-                    "name": "text",
-                    "type": "STRING",
-                    "link": 26,
-                    "widget": {
-                        "name": "text"
-                    },
-                    "slot_index": 0
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "STRING",
-                    "type": "STRING",
-                    "links": null,
-                    "shape": 6
-                }
-            ],
-            "properties": {
-                "Node name for S&R": "ShowText|pysssss"
-            },
-            "widgets_values": [
-                "",
-                "1girl, hatsune miku, vocaloid, :3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, long sleeves, looking at viewer, musical note, neck ribbon, orange eyes, orange rose, outstretched arm, parted lips, pinafore dress, ribbon, short dress, sleeveless, sleeveless dress, smile, solo, standing, striped, striped jacket, twintails, very long hair, white background, rating:sfw, rating:general"
-            ]
-        },
-        {
             "id": 44,
             "type": "ShowText|pysssss",
             "pos": [
@@ -752,7 +591,7 @@
                 "1": 76
             },
             "flags": {},
-            "order": 16,
+            "order": 17,
             "mode": 0,
             "inputs": [
                 {
@@ -793,7 +632,7 @@
                 "1": 120.69656372070312
             },
             "flags": {},
-            "order": 17,
+            "order": 18,
             "mode": 0,
             "inputs": [
                 {
@@ -858,6 +697,288 @@
                 "hatsune miku",
                 "long",
                 "1girl"
+            ]
+        },
+        {
+            "id": 7,
+            "type": "ShowText|pysssss",
+            "pos": [
+                777,
+                127
+            ],
+            "size": {
+                "0": 382.05462646484375,
+                "1": 160.35585021972656
+            },
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 26,
+                    "widget": {
+                        "name": "text"
+                    },
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": null,
+                    "shape": 6
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "ShowText|pysssss"
+            },
+            "widgets_values": [
+                "",
+                "1girl, hatsune miku, vocaloid, :3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, long sleeves, looking at viewer, musical note, neck ribbon, orange eyes, orange rose, outstretched arm, parted lips, pinafore dress, ribbon, short dress, sleeveless, sleeveless dress, smile, solo, standing, striped, striped jacket, twintails, very long hair, white background, rating:sfw, rating:general"
+            ]
+        },
+        {
+            "id": 30,
+            "type": "ShowText|pysssss",
+            "pos": [
+                1810,
+                420
+            ],
+            "size": {
+                "0": 382.05462646484375,
+                "1": 160.35585021972656
+            },
+            "flags": {},
+            "order": 12,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 35,
+                    "widget": {
+                        "name": "text"
+                    },
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": null,
+                    "shape": 6
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "ShowText|pysssss"
+            },
+            "widgets_values": [
+                "",
+                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>vocaloid</copyright><character>hatsune miku</character><general><|long|>1girl<|input_end|>:3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, long sleeves, looking at viewer, musical note, neck ribbon, orange eyes, orange rose, outstretched arm, parted lips, pinafore dress, ribbon, short dress, sleeveless, sleeveless dress, smile, solo, standing, striped, striped jacket, twintails, very long hair, white background</general><|eos|>"
+            ]
+        },
+        {
+            "id": 27,
+            "type": "DanbooruTagsTransformerDecode",
+            "pos": [
+                1380,
+                350
+            ],
+            "size": {
+                "0": 222.96737670898438,
+                "1": 58
+            },
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "token_ids",
+                    "type": "DART_TOKEN_IDS",
+                    "link": 32,
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": [
+                        34
+                    ],
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "DanbooruTagsTransformerDecode"
+            },
+            "widgets_values": [
+                true
+            ]
+        },
+        {
+            "id": 29,
+            "type": "ShowText|pysssss",
+            "pos": [
+                1810,
+                210
+            ],
+            "size": {
+                "0": 382.05462646484375,
+                "1": 160.35585021972656
+            },
+            "flags": {},
+            "order": 11,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 34,
+                    "widget": {
+                        "name": "text"
+                    },
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": null,
+                    "shape": 6
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "ShowText|pysssss"
+            },
+            "widgets_values": [
+                "",
+                "rating:sfw, rating:general, vocaloid, hatsune miku, 1girl, :3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, long sleeves, looking at viewer, musical note, neck ribbon, orange eyes, orange rose, outstretched arm, parted lips, pinafore dress, ribbon, short dress, sleeveless, sleeveless dress, smile, solo, standing, striped, striped jacket, twintails, very long hair, white background"
+            ]
+        },
+        {
+            "id": 47,
+            "type": "ShowText|pysssss",
+            "pos": [
+                1813,
+                2
+            ],
+            "size": {
+                "0": 382.05462646484375,
+                "1": 160.35585021972656
+            },
+            "flags": {},
+            "order": 21,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 50,
+                    "widget": {
+                        "name": "text"
+                    },
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": null,
+                    "shape": 6
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "ShowText|pysssss"
+            },
+            "widgets_values": [
+                "",
+                "rating:sfw, rating:general, vocaloid, 1girl, :3, blush, dress, facing viewer, full body, green hair, hair between eyes, hair ornament, headphones, long hair, long sleeves, looking at viewer, musical note, neck ribbon, orange eyes, orange rose, outstretched arm, parted lips, pinafore dress, ribbon, short dress, sleeveless, sleeveless dress, smile, solo, standing, striped, striped jacket, very long hair, white background"
+            ]
+        },
+        {
+            "id": 46,
+            "type": "DanbooruTagsTransformerDecode",
+            "pos": [
+                1377,
+                244
+            ],
+            "size": {
+                "0": 222.96737670898438,
+                "1": 58
+            },
+            "flags": {},
+            "order": 19,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "token_ids",
+                    "type": "DART_TOKEN_IDS",
+                    "link": 52,
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": [
+                        50
+                    ],
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "DanbooruTagsTransformerDecode"
+            },
+            "widgets_values": [
+                true
+            ]
+        },
+        {
+            "id": 48,
+            "type": "DanbooruTagsTransformerRemoveTagToken",
+            "pos": [
+                940,
+                332
+            ],
+            "size": {
+                "0": 245.4545440673828,
+                "1": 103.03028106689453
+            },
+            "flags": {},
+            "order": 10,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "token_ids",
+                    "type": "DART_TOKEN_IDS",
+                    "link": 53,
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "DART_TOKEN_IDS",
+                    "type": "DART_TOKEN_IDS",
+                    "links": [
+                        52
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "DanbooruTagsTransformerRemoveTagToken"
+            },
+            "widgets_values": [
+                "hatsune miku, twintails"
             ]
         }
     ],
@@ -1069,6 +1190,30 @@
             45,
             0,
             "STRING"
+        ],
+        [
+            50,
+            46,
+            0,
+            47,
+            0,
+            "STRING"
+        ],
+        [
+            52,
+            48,
+            0,
+            46,
+            0,
+            "DART_TOKEN_IDS"
+        ],
+        [
+            53,
+            26,
+            0,
+            48,
+            0,
+            "DART_TOKEN_IDS"
         ]
     ],
     "groups": [],
