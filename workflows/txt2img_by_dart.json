@@ -88,8 +88,8 @@
             "id": 18,
             "type": "KSampler",
             "pos": [
-                386,
-                616
+                390,
+                670
             ],
             "size": {
                 "0": 315,
@@ -512,37 +512,6 @@
             ]
         },
         {
-            "id": 14,
-            "type": "PromptUtilitiesLoadPreset",
-            "pos": [
-                388,
-                497
-            ],
-            "size": {
-                "0": 282.4613342285156,
-                "1": 58
-            },
-            "flags": {},
-            "order": 3,
-            "mode": 0,
-            "outputs": [
-                {
-                    "name": "STRING",
-                    "type": "STRING",
-                    "links": [
-                        11
-                    ],
-                    "shape": 3
-                }
-            ],
-            "properties": {
-                "Node name for S&R": "PromptUtilitiesLoadPreset"
-            },
-            "widgets_values": [
-                "sample\\animagineXL : neg"
-            ]
-        },
-        {
             "id": 24,
             "type": "DanbooruTagsTransformerGenerate",
             "pos": [
@@ -551,7 +520,7 @@
             ],
             "size": {
                 "0": 277.2727355957031,
-                "1": 168
+                "1": 218
             },
             "flags": {},
             "order": 7,
@@ -592,7 +561,39 @@
                 12345,
                 "fixed",
                 true,
+                "",
                 ""
+            ]
+        },
+        {
+            "id": 14,
+            "type": "PromptUtilitiesLoadPreset",
+            "pos": [
+                390,
+                550
+            ],
+            "size": {
+                "0": 282.4613342285156,
+                "1": 58
+            },
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": [
+                        11
+                    ],
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "PromptUtilitiesLoadPreset"
+            },
+            "widgets_values": [
+                "sample\\animagineXL : neg"
             ]
         }
     ],

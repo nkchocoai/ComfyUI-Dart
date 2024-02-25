@@ -16,6 +16,7 @@ git clone https://github.com/nkchocoai/ComfyUI-Dart.git
 - Generate danbooru tags by [Dart(Danbooru Tags Transformer)](https://huggingface.co/p1atdev/dart-v1-sft).
 - See the following URL for the syntax of prompt.
   - https://huggingface.co/p1atdev/dart-v1-sft#prompt-guidde
+- Tags specified with `remove_tags` will not be output.
 
 ### Dart Compose Prompt
 - Output input "prompt" of Dart Generate node.
@@ -36,3 +37,6 @@ git clone https://github.com/nkchocoai/ComfyUI-Dart.git
 
 ### Dart Decode By Splited Parts
 - Output decoded strings of the token ID sequence split by part.
+
+### Dart Remove Tag Token
+- Remove the specified tag from the token ID sequence.

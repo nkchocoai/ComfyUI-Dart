@@ -14,6 +14,7 @@ git clone https://github.com/nkchocoai/ComfyUI-Dart.git
 - [Dart(Danbooru Tags Transformer)](https://huggingface.co/p1atdev/dart-v1-sft) によりdanbooruタグを生成します。
 - promptの構文は以下のURLを参照ください。
   - https://huggingface.co/p1atdev/dart-v1-sft#prompt-guidde
+- `remove_tags`で指定したタグは出力されません。
 
 ### Dart Compose Prompt
 - Dart Generateノードの入力であるpromptを生成します。
@@ -34,3 +35,6 @@ git clone https://github.com/nkchocoai/ComfyUI-Dart.git
 
 ### Dart Decode By Splited Parts
 - 要素ごとに分割したトークンID列をデコードした文字列を出力します。
+
+### Dart Remove Tag Token
+- トークンID列から指定したタグを削除します。

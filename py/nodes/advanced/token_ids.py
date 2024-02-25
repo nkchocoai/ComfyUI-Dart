@@ -20,3 +20,31 @@ class DanbooruTagsTransformerRearrangedByAnimagine(BaseNode):
     def rearrange(self, token_ids):
         rearranged_tokens = DartDecoder.rearrange_by_animagine(token_ids)
         return (rearranged_tokens,)
+
+
+class DanbooruTagsTransformerRemoveTagToken(BaseNode):
+    @classmethod
+    def INPUT_TYPES(s):
+        input_types = {
+            "required": {
+                "token_ids": ("DART_TOKEN_IDS",),
+                "remove_tags": (
+                    "STRING",
+                    {
+                        "default": "",
+                        "display": "remove tags",
+                        "multiline": True,
+                    },
+                ),
+            },
+        }
+
+        return input_types
+
+    RETURN_TYPES = ("DART_TOKEN_IDS",)
+    FUNCTION = "remove"
+
+    def remove(self, token_ids, remove_tags):
+        remove_tag_token_ids = DartDecoder.tokenizer.encode_plus(remove_tags).input_ids
+        token_ids = [token for token in token_ids if token not in remove_tag_token_ids]
+        return (token_ids,)

@@ -36,6 +36,14 @@ class DanbooruTagsTransformerGenerate(BaseNode):
                         "multiline": True,
                     },
                 ),
+                "remove_tags": (
+                    "STRING",
+                    {
+                        "default": "",
+                        "display": "remove tags",
+                        "multiline": True,
+                    },
+                ),
             },
         }
 
@@ -44,9 +52,22 @@ class DanbooruTagsTransformerGenerate(BaseNode):
     RETURN_TYPES = ("STRING",)
     FUNCTION = "generate"
 
-    def generate(self, prompt, seed, animagine_order=True, setting=None, ban_tags=""):
+    def generate(
+        self,
+        prompt,
+        seed,
+        animagine_order=True,
+        setting=None,
+        ban_tags="",
+        remove_tags="",
+    ):
         outputs = DartGenerator.generate(prompt, seed, setting, ban_tags)
         token_ids = outputs[0]
+
+        # remove tags
+        remove_tag_token_ids = DartDecoder.tokenizer.encode_plus(remove_tags).input_ids
+        token_ids = [token for token in token_ids if token not in remove_tag_token_ids]
+
         if animagine_order:
             result = DartDecoder.decode_by_animagine(token_ids)
         else:
