@@ -1,0 +1,256 @@
+{
+    "last_node_id": 15,
+    "last_link_id": 10,
+    "nodes": [
+        {
+            "id": 3,
+            "type": "DanbooruTagsTransformerComposePrompt",
+            "pos": [
+                669,
+                324
+            ],
+            "size": {
+                "0": 278.0885925292969,
+                "1": 203.80821228027344
+            },
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": [
+                        5
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "DanbooruTagsTransformerComposePrompt"
+            },
+            "widgets_values": [
+                "rating:general",
+                "",
+                "",
+                "long",
+                "1girl"
+            ]
+        },
+        {
+            "id": 5,
+            "type": "DanbooruTagsTransformerGenerate",
+            "pos": [
+                1011,
+                306
+            ],
+            "size": {
+                "0": 284.5321350097656,
+                "1": 218
+            },
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "setting",
+                    "type": "DART SETTING",
+                    "link": null
+                },
+                {
+                    "name": "prompt",
+                    "type": "STRING",
+                    "link": 5,
+                    "widget": {
+                        "name": "prompt"
+                    },
+                    "slot_index": 1
+                },
+                {
+                    "name": "ban_tags",
+                    "type": "STRING",
+                    "link": 10,
+                    "widget": {
+                        "name": "ban_tags"
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": [
+                        4
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "DanbooruTagsTransformerGenerate"
+            },
+            "widgets_values": [
+                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>original</copyright><character></character><general><|long|>1girl<|input_end|>",
+                667290459,
+                "randomize",
+                false,
+                "",
+                ""
+            ]
+        },
+        {
+            "id": 2,
+            "type": "ShowText|pysssss",
+            "pos": [
+                1338,
+                307
+            ],
+            "size": {
+                "0": 430.01812744140625,
+                "1": 143.86363220214844
+            },
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 4,
+                    "widget": {
+                        "name": "text"
+                    },
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": null,
+                    "shape": 6
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "ShowText|pysssss"
+            },
+            "widgets_values": [
+                "",
+                "rating:sfw, rating:general, 1girl, black footwear, black skirt, blue eyes, blunt bangs, boots, brown footwear, full body, full body, hair ornament, knee boots, lace-up boots, looking at viewer, open mouth, pleated skirt, shoes, sitting, skirt, solo, white background"
+            ]
+        },
+        {
+            "id": 14,
+            "type": "DanbooruTagsTransformerBanTagsFromRegex",
+            "pos": [
+                666,
+                580
+            ],
+            "size": {
+                "0": 271.1372985839844,
+                "1": 127.68909454345703
+            },
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": [
+                        8,
+                        10
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "DanbooruTagsTransformerBanTagsFromRegex"
+            },
+            "widgets_values": [
+                ".+ hair$\n.+ ears$"
+            ]
+        },
+        {
+            "id": 15,
+            "type": "ShowText|pysssss",
+            "pos": [
+                1016,
+                584
+            ],
+            "size": {
+                "0": 465.51507568359375,
+                "1": 167.5841064453125
+            },
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 8,
+                    "widget": {
+                        "name": "text"
+                    },
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": null,
+                    "shape": 6
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "ShowText|pysssss"
+            },
+            "widgets_values": [
+                "",
+                "wavy hair, cow ears, rubbing ears, demon ears, moose ears, meerkat ears, brown facial hair, eyebrows hidden by hair, hands on another's ears, food on hair, hole in hair, grey pubic hair, fox ears, giraffe ears, ruffling hair, steam from ears, folded hair, mickey mouse ears, eyes visible through hair, wing-shaped hair, sparse pubic hair, donkey ears, licking hair, axolotl ears, playing with another's ears, colored pubic hair, severed hair, orange pubic hair, stray pubic hair, pig ears, medium hair, brushing hair, blonde facial hair, patchwork hair, light green hair, braiding hair, lop rabbit ears, glowing hair, alpaca ears, owl ears, skunk ears, cheetah ears, asymmetrical hair, alternate body hair, fake human ears, detached ears, pov hair, sitting on hair, fake facial hair, kissing hair, fiery ears, glowing ears, upswept hair, purple pubic hair, prairie dog ears, arm hair, dark green hair, spectral hair, pointy hair, strip hair, floppy ears, wringing hair, beaver ears, multi-tied hair, jackal ears, deer ears, holding another's hair, blood from ears, thick chest hair, squirrel ears, butterfly on hair, low tied hair, navel hair, curtained hair, chinchilla ears, black pubic hair, wolverine ears, green facial hair, tying hair, cloud hair, lynx ears, holding ears, mismatched pubic hair, whipping hair, expressive hair, light brown hair, hedgehog ears, flower-shaped hair, castanet hair, purple facial hair, ribbon hair, blue hair, cat ears, playing with hair, pink hair, cable hair, blue facial hair, holding hair, very short hair, horn-shaped hair, growing hair, platinum blonde hair, brushing own hair, ass hair, headphones for animal ears, animal hair, alternate animal ears, snake hair, smelling hair, drawn ears, living hair, light purple hair, chest hair, panda ears, ice hair, curly hair, mismatched animal ears, armadillo ears, flapping ears, green pubic hair, messi hair, minnie mouse ears, bleached hair, straight hair, sparse leg hair, hand in another's hair, absurdly long hair, patterned hair, disembodied hair, sticker on hair, eating hair, asymmetrical ears, curling hair, multicolored ears, bouncing hair, red panda ears, lone nape hair, hand hair, hole in ears, bear ears, starry hair, covering own ears, biting hair, tied hair, antenna hair, brown hair, plant hair, short hair, no ears, light blue hair, dragon ears, weasel ears, ox ears, no animal ears, insect on hair, chipmunk ears, spotted hair, squeezing hair, shaped pubic hair, mouth visible through hair, grabbing facial hair, covering another's ears, eevee ears, mechanical ears, ocelot ears, kamaitachi ears, polka dot hair, bird ears, heart-shaped hair, ears visible through hair, zebra ears, grabbing another's hair, white facial hair, brushing another's hair, red facial hair, very long hair, ferret ears, hyena ears, innertube with ears, white pubic hair, lion hair, wet hair, pointy ears, plugging ears, snowflake in hair, okapi ears, elephant ears, pubic hair, print hair, tiger ears, mink ears, prehensile ears, greying hair, leopard ears, low-braided long hair, male pubic hair, washing hair, tall hair, badger ears, rabbit ears, tentacle hair, grabbing own hair, knife in hair, fluffy hair, intestine hair, hippopotamus ears, sparse arm hair, tasmanian devil ears, glitter in hair, facial hair, rainbow hair, messy hair, dark blue hair, twisted ears, black facial hair, body hair, pink pubic hair, playing with another's hair, translucent hair, unaligned ears, white hair, heart hair, fake animal ears, panther ears, possum ears, earth hair, bat ears, raccoon ears, loop on hair, koala ears, fake hair, earphones on animal ears, monkey ears, wolf ears, hands in hair, blonde pubic hair, excessive pubic hair, porcupine ears, flipped hair, robot ears, textured hair, low-tied medium hair, holding own ears, holding by the ears, energy hair, rhinoceros ears, pulling own hair, sparse chest hair, red hair, extra ears, marmot ears, blue pubic hair, scattered hair, mechanical hair, colored inner hair, prehensile nose hair, dark red hair, drying hair, jaguar ears, lightbulb hair, burnt hair, floating hair, aardwolf ears, visible ears, prehensile hair, detached hair, brown pubic hair, multicolored hair, animal with fake animal ears, fake elf ears, holographic hair, cannon hair, blush visible through hair, rhino ears, silver hair, big hair, boar ears, holding own hair, orange hair, liquid hair, hair ears, sheep ears, otter ears, twisted hair, hand in own hair, mouse ears, playing with own hair, multiple animal ears, sparse navel hair, chocolate in hair, cutting hair, huge antenna hair, purple hair, anal hair, tapir ears, adjusting hair, paint in hair, feather hair, hamster ears, alternate facial hair, cupping ears, large ears, green hair, female pubic hair, low-tied long hair, colored armpit hair, split-color hair, alternate ears, heart antenna hair, nose hair, foot hair, wing ears, back hair, headphones on animal ears, hands in own hair, kangaroo ears, fiery hair, heart-shaped pubic hair, helicopter hair, blonde hair, streaked hair, lightning hair, animal with human ears, spiked hair, phone with ears, feeling facial hair, grey facial hair, bunching hair, caracal ears, kishimen hair, pink facial hair, capybara ears, tying another's hair, leg hair, crystal hair, long pointy ears, scanline hair, animal ears, two-tone hair, gazelle ears, bandage on hair, long hair, drill hair, anteater ears, colored inner animal ears, tied ears, intertwined hair, blood in hair, untying hair, red pubic hair, grey hair, crested hair, implied extra ears, goat ears, striped hair, eyewear visible through hair, lemur ears, black hair, pikachu ears, komainu ears, pokemon ears, antelope ears, dog ears, neck hair, impossible hair, very long ears, tamandua ears, cutting own hair, arrow through hair, pangolin ears, parted hair, star-shaped hair, epic hair, knuckle hair, armpit hair, checkered hair, gradient hair, lion ears, adjusting another's hair, black ears, bow-shaped hair, camel ears, fluffy ears, cum on hair, horse ears, stray hair, droopy ears, aqua hair, hat with ears"
+            ]
+        }
+    ],
+    "links": [
+        [
+            4,
+            5,
+            0,
+            2,
+            0,
+            "STRING"
+        ],
+        [
+            5,
+            3,
+            0,
+            5,
+            1,
+            "STRING"
+        ],
+        [
+            8,
+            14,
+            0,
+            15,
+            0,
+            "STRING"
+        ],
+        [
+            10,
+            14,
+            0,
+            5,
+            2,
+            "STRING"
+        ]
+    ],
+    "groups": [],
+    "config": {},
+    "extra": {},
+    "version": 0.4
+}
