@@ -22,6 +22,10 @@ git clone https://github.com/nkchocoai/ComfyUI-Dart.git
 ### Dart Generation Config
 - Dart Generateノードの入力であるconfigを生成します。
 
+### Dart Ban Tags From Regex
+- 正規表現にマッチしたDart Generateノードの入力であるban tagsを生成します。
+- 複数行に分けることで複数の正規表現で検索することができます。
+
 ### Dart Generate(Advanced)
 - [Dart(Danbooru Tags Transformer)](https://huggingface.co/p1atdev/dart-v1-sft) により生成されたdanbooruタグのトークンID列を出力します。
 - promptの構文は以下のURLを参照ください。

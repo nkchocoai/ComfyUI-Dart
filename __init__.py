@@ -10,11 +10,13 @@ from .py.nodes.advanced.token_ids import (
     DanbooruTagsTransformerRearrangedByAnimagine,
     DanbooruTagsTransformerRemoveTagToken,
 )
+from .py.nodes.ban_tags import DanbooruTagsTransformerBanTagsFromRegex
 
 NODE_CLASS_MAPPINGS = {
     "DanbooruTagsTransformerGenerate": DanbooruTagsTransformerGenerate,
     "DanbooruTagsTransformerComposePrompt": DanbooruTagsTransformerComposePrompt,
     "DanbooruTagsTransformerGenerationConfig": DanbooruTagsTransformerGenerationConfig,
+    "DanbooruTagsTransformerBanTagsFromRegex": DanbooruTagsTransformerBanTagsFromRegex,
     # Advanced
     "DanbooruTagsTransformerGenerateAdvanced": DanbooruTagsTransformerGenerateAdvanced,
     "DanbooruTagsTransformerDecode": DanbooruTagsTransformerDecode,
@@ -27,6 +29,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "DanbooruTagsTransformerGenerate": "Dart Generate",
     "DanbooruTagsTransformerComposePrompt": "Dart Compose Prompt",
     "DanbooruTagsTransformerGenerationConfig": "Dart Generation Config",
+    "DanbooruTagsTransformerBanTagsFromRegex": "Dart Ban Tags From Regex",
     # Advanced
     "DanbooruTagsTransformerGenerateAdvanced": "Dart Generate(Advanced)",
     "DanbooruTagsTransformerDecode": "Dart Decode",
