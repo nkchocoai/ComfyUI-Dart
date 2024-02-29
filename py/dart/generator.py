@@ -1,3 +1,5 @@
+import re
+
 import numpy as np
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM
@@ -68,3 +70,15 @@ class DartGenerator:
         generation_config.top_k = config["top_k"]
         generation_config.num_beams = config["num_beams"]
         return generation_config
+
+    @classmethod
+    def get_ban_tags_from_regex(cls, regex_patterns):
+        cls.load_if_none()
+
+        ban_tags = set()
+        patterns = [re.compile(regex_pattern) for regex_pattern in regex_patterns]
+        for pattern in patterns:
+            for tag in cls.tokenizer.vocab:
+                if pattern.match(tag):
+                    ban_tags.add(tag)
+        return ban_tags
