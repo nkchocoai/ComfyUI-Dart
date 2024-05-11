@@ -1,4 +1,4 @@
-from ..dart.generator import DartGenerator
+from ..dart.tokenizer import DartTokenizer
 
 from .base import BaseNode
 
@@ -8,6 +8,7 @@ class DanbooruTagsTransformerBanTagsFromRegex(BaseNode):
     def INPUT_TYPES(s):
         input_types = {
             "required": {
+                "tokenizer": ("DART_TOKENIZER",),
                 "patterns": (
                     "STRING",
                     {
@@ -23,6 +24,6 @@ class DanbooruTagsTransformerBanTagsFromRegex(BaseNode):
     RETURN_TYPES = ("STRING",)
     FUNCTION = "compose"
 
-    def compose(self, patterns):
-        ban_tags = DartGenerator.get_ban_tags_from_regex(patterns.splitlines())
+    def compose(self, tokenizer: DartTokenizer, patterns):
+        ban_tags = tokenizer.get_ban_tags_from_regex(patterns.splitlines())
         return (", ".join(ban_tags),)
