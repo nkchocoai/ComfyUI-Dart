@@ -1,50 +1,54 @@
 {
-    "last_node_id": 25,
-    "last_link_id": 29,
+    "last_node_id": 27,
+    "last_link_id": 34,
     "nodes": [
         {
-            "id": 22,
-            "type": "DanbooruTagsTransformerComposePrompt",
+            "id": 27,
+            "type": "DanbooruTagsTransformerLoader",
             "pos": [
-                35,
-                354
+                30,
+                130
             ],
             "size": {
-                "0": 318,
-                "1": 188
+                "0": 315,
+                "1": 78
             },
             "flags": {},
             "order": 0,
             "mode": 0,
             "outputs": [
                 {
-                    "name": "STRING",
-                    "type": "STRING",
+                    "name": "DART_MODEL",
+                    "type": "DART_MODEL",
                     "links": [
-                        25,
-                        28
+                        34
                     ],
                     "shape": 3,
                     "slot_index": 0
+                },
+                {
+                    "name": "DART_TOKENIZER",
+                    "type": "DART_TOKENIZER",
+                    "links": [
+                        33
+                    ],
+                    "shape": 3,
+                    "slot_index": 1
                 }
             ],
             "properties": {
-                "Node name for S&R": "DanbooruTagsTransformerComposePrompt"
+                "Node name for S&R": "DanbooruTagsTransformerLoader"
             },
             "widgets_values": [
-                "rating:general",
-                "vocaloid",
-                "hatsune miku",
-                "long",
-                "1girl"
+                "dart-v1-sft"
             ]
         },
         {
             "id": 25,
             "type": "DanbooruTagsTransformerGenerationConfig",
             "pos": [
-                35,
-                127
+                27,
+                256
             ],
             "size": {
                 "0": 315,
@@ -58,7 +62,7 @@
                     "name": "DART SETTING",
                     "type": "DART SETTING",
                     "links": [
-                        29
+                        31
                     ],
                     "shape": 3,
                     "slot_index": 0
@@ -77,112 +81,55 @@
             ]
         },
         {
-            "id": 7,
-            "type": "ShowText|pysssss",
+            "id": 22,
+            "type": "DanbooruTagsTransformerComposePrompt",
             "pos": [
-                777,
-                127
+                23,
+                483
             ],
             "size": {
-                "0": 382.05462646484375,
-                "1": 160.35585021972656
+                "0": 318,
+                "1": 188
             },
             "flags": {},
-            "order": 4,
+            "order": 2,
             "mode": 0,
-            "inputs": [
-                {
-                    "name": "text",
-                    "type": "STRING",
-                    "link": 26,
-                    "widget": {
-                        "name": "text"
-                    },
-                    "slot_index": 0
-                }
-            ],
-            "outputs": [
-                {
-                    "name": "STRING",
-                    "type": "STRING",
-                    "links": null,
-                    "shape": 6
-                }
-            ],
-            "properties": {
-                "Node name for S&R": "ShowText|pysssss"
-            },
-            "widgets_values": [
-                "",
-                "1girl, hatsune miku, vocaloid, :q, apron, aqua eyes, aqua hair, aqua necktie, bare shoulders, black belt, black bow, black pants, blush, bow, breasts, collared shirt, detached sleeves, hair bow, hair ornament, hands up, headphones, headset, heart, heart-shaped eyes, long hair, long sleeves, looking at viewer, medium breasts, necktie, pants, shirt, simple background, sleeveless, sleeveless shirt, smile, solo, tongue, two-tone shirt, very long hair, white background, white shirt, rating:sfw, rating:general"
-            ]
-        },
-        {
-            "id": 24,
-            "type": "DanbooruTagsTransformerGenerate",
-            "pos": [
-                410,
-                127
-            ],
-            "size": {
-                "0": 278.941650390625,
-                "1": 218
-            },
-            "flags": {},
-            "order": 3,
-            "mode": 0,
-            "inputs": [
-                {
-                    "name": "setting",
-                    "type": "DART SETTING",
-                    "link": 29
-                },
-                {
-                    "name": "prompt",
-                    "type": "STRING",
-                    "link": 28,
-                    "widget": {
-                        "name": "prompt"
-                    },
-                    "slot_index": 1
-                }
-            ],
             "outputs": [
                 {
                     "name": "STRING",
                     "type": "STRING",
                     "links": [
-                        26
+                        25,
+                        32
                     ],
                     "shape": 3,
                     "slot_index": 0
                 }
             ],
             "properties": {
-                "Node name for S&R": "DanbooruTagsTransformerGenerate"
+                "Node name for S&R": "DanbooruTagsTransformerComposePrompt"
             },
             "widgets_values": [
-                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>original</copyright><character></character><general><|long|>1girl<|input_end|>",
-                123,
-                "fixed",
-                true,
-                "",
-                ""
+                "rating:general",
+                "vocaloid",
+                "hatsune miku",
+                "long",
+                "1girl"
             ]
         },
         {
             "id": 23,
             "type": "ShowText|pysssss",
             "pos": [
-                410,
-                390
+                433,
+                481
             ],
             "size": {
                 "0": 336.2208251953125,
                 "1": 113.20250701904297
             },
             "flags": {},
-            "order": 2,
+            "order": 3,
             "mode": 0,
             "inputs": [
                 {
@@ -209,6 +156,119 @@
             "widgets_values": [
                 "",
                 "<|bos|><rating>rating:sfw, rating:general</rating><copyright>vocaloid</copyright><character>hatsune miku</character><general><|long|>1girl<|input_end|>"
+            ]
+        },
+        {
+            "id": 26,
+            "type": "DanbooruTagsTransformerGenerate",
+            "pos": [
+                438,
+                130
+            ],
+            "size": {
+                "0": 277,
+                "1": 273
+            },
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "model",
+                    "type": "DART_MODEL",
+                    "link": 34,
+                    "slot_index": 0
+                },
+                {
+                    "name": "tokenizer",
+                    "type": "DART_TOKENIZER",
+                    "link": 33
+                },
+                {
+                    "name": "setting",
+                    "type": "DART SETTING",
+                    "link": 31
+                },
+                {
+                    "name": "prompt",
+                    "type": "STRING",
+                    "link": 32,
+                    "widget": {
+                        "name": "prompt"
+                    },
+                    "slot_index": 3
+                },
+                {
+                    "name": "ban_tags",
+                    "type": "STRING",
+                    "link": null,
+                    "widget": {
+                        "name": "ban_tags"
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": [
+                        30
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "DanbooruTagsTransformerGenerate"
+            },
+            "widgets_values": [
+                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>original</copyright><character></character><general><|long|>1girl<|input_end|>",
+                3185812369,
+                "randomize",
+                true,
+                "",
+                ""
+            ]
+        },
+        {
+            "id": 7,
+            "type": "ShowText|pysssss",
+            "pos": [
+                775,
+                130
+            ],
+            "size": {
+                "0": 382.05462646484375,
+                "1": 160.35585021972656
+            },
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 30,
+                    "widget": {
+                        "name": "text"
+                    },
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": null,
+                    "shape": 6
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "ShowText|pysssss"
+            },
+            "widgets_values": [
+                "",
+                "1girl, hatsune miku, vocaloid, aqua eyes, aqua hair, aqua necktie, bare shoulders, black skirt, black sleeves, black thighhighs, china dress, chinese clothes, dress, grey shirt, hand up, long hair, looking at viewer, necktie, open mouth, shirt, shoulder tattoo, simple background, skirt, sleeveless, sleeveless shirt, solo, tattoo, thighhighs, twintails, very long hair, white background, rating:sfw, rating:general"
             ]
         }
     ],
@@ -270,28 +330,44 @@
             "STRING"
         ],
         [
+            30,
             26,
-            24,
             0,
             7,
             0,
             "STRING"
         ],
         [
-            28,
+            31,
+            25,
+            0,
+            26,
+            2,
+            "DART SETTING"
+        ],
+        [
+            32,
             22,
             0,
-            24,
-            1,
+            26,
+            3,
             "STRING"
         ],
         [
-            29,
-            25,
+            33,
+            27,
+            1,
+            26,
+            1,
+            "DART_TOKENIZER"
+        ],
+        [
+            34,
+            27,
             0,
-            24,
+            26,
             0,
-            "DART SETTING"
+            "DART_MODEL"
         ]
     ],
     "groups": [],
