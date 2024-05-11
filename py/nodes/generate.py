@@ -1,7 +1,7 @@
-from ..dart.generator import DartGenerator
-from ..dart.decode import DartDecoder
-
 from .base import BaseNode
+
+from ..dart.model import DartModel
+from ..dart.tokenizer import DartTokenizer
 
 
 class DanbooruTagsTransformerGenerate(BaseNode):
@@ -9,6 +9,8 @@ class DanbooruTagsTransformerGenerate(BaseNode):
     def INPUT_TYPES(s):
         input_types = {
             "required": {
+                "model": ("DART_MODEL",),
+                "tokenizer": ("DART_TOKENIZER",),
                 "prompt": (
                     "STRING",
                     {
@@ -54,6 +56,8 @@ class DanbooruTagsTransformerGenerate(BaseNode):
 
     def generate(
         self,
+        model: DartModel,
+        tokenizer: DartTokenizer,
         prompt,
         seed,
         animagine_order=True,
@@ -61,15 +65,15 @@ class DanbooruTagsTransformerGenerate(BaseNode):
         ban_tags="",
         remove_tags="",
     ):
-        outputs = DartGenerator.generate(prompt, seed, setting, ban_tags)
+        outputs = model.generate(tokenizer, prompt, seed, setting, ban_tags)
         token_ids = outputs[0]
 
         # remove tags
-        remove_tag_token_ids = DartDecoder.tokenizer.encode_plus(remove_tags).input_ids
+        remove_tag_token_ids = tokenizer.tokenizer.encode_plus(remove_tags).input_ids
         token_ids = [token for token in token_ids if token not in remove_tag_token_ids]
 
         if animagine_order:
-            result = DartDecoder.decode_by_animagine(token_ids)
+            result = tokenizer.decode_by_animagine(token_ids)
         else:
-            result = DartDecoder.decode(token_ids)
+            result = tokenizer.decode(token_ids)
         return (result,)

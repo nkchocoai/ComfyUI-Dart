@@ -1,3 +1,4 @@
+from .py.nodes.loader import DanbooruTagsTransformerLoader
 from .py.nodes.generate import DanbooruTagsTransformerGenerate
 from .py.nodes.prompt import DanbooruTagsTransformerComposePrompt
 from .py.nodes.config import DanbooruTagsTransformerGenerationConfig
@@ -13,6 +14,7 @@ from .py.nodes.advanced.token_ids import (
 from .py.nodes.ban_tags import DanbooruTagsTransformerBanTagsFromRegex
 
 NODE_CLASS_MAPPINGS = {
+    "DanbooruTagsTransformerLoader": DanbooruTagsTransformerLoader,
     "DanbooruTagsTransformerGenerate": DanbooruTagsTransformerGenerate,
     "DanbooruTagsTransformerComposePrompt": DanbooruTagsTransformerComposePrompt,
     "DanbooruTagsTransformerGenerationConfig": DanbooruTagsTransformerGenerationConfig,
@@ -26,6 +28,7 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
+    "DanbooruTagsTransformerLoader": "Dart Load",
     "DanbooruTagsTransformerGenerate": "Dart Generate",
     "DanbooruTagsTransformerComposePrompt": "Dart Compose Prompt",
     "DanbooruTagsTransformerGenerationConfig": "Dart Generation Config",
