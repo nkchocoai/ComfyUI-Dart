@@ -2,23 +2,28 @@ import re
 
 from transformers import AutoTokenizer
 
-from .defs.token import (
-    RATING_EOS,
-    COPYRIGHT_EOS,
-    CHARACTER_EOS,
-    GENERAL_EOS,
-    SPECIAL_TAGS,
+from ..defs.token_v2 import (
+    RATING_SFW,
+    RATING_GENERAL,
+    RATING_SENSITIVE,
+    RATING_NSFW,
+    RATING_QUESTIONABLE,
+    RATING_EXPLICIT,
+)
+
+from ..defs.token import (
     PEOPLE_TAGS_LIST,
 )
 
 
-class DartTokenizer:
-    def __init__(self, model_name):
+class DartTokenizerV2:
+    def __init__(self, model_name, special_tags):
         self.tokenizer = AutoTokenizer.from_pretrained(
             model_name, trust_remote_code=True
         )
+        self.special_tags = special_tags
         self.token_id_table = {
-            tag: self.tokenizer.convert_tokens_to_ids(tag) for tag in SPECIAL_TAGS
+            tag: self.tokenizer.convert_tokens_to_ids(tag) for tag in self.special_tags
         }
 
     def get_token_id(self, token):
@@ -30,18 +35,21 @@ class DartTokenizer:
         return self.tokenizer.convert_tokens_to_ids(tags_list)
 
     def decode(self, token_ids, skip_special_tokens=True):
-        return self.tokenizer.decode(token_ids, skip_special_tokens=skip_special_tokens)
+        tokens = [
+            self.tokenizer.decode([token_id], skip_special_tokens=skip_special_tokens)
+            for token_id in token_ids
+        ]
+        return ", ".join([token for token in tokens if token])
 
-    # refer. https://huggingface.co/spaces/p1atdev/danbooru-tags-transformer/blob/main/app.py#L218-L267
     def decode_by_animagine(self, token_ids):
         rearranged_tokens = self.rearrange_by_animagine(token_ids)
 
-        decoded = self.tokenizer.decode(rearranged_tokens, skip_special_tokens=True)
+        tokens = [
+            self.tokenizer.decode([token_id], skip_special_tokens=True)
+            for token_id in rearranged_tokens
+        ]
 
-        # fix "nsfw" tag
-        decoded = decoded.replace("rating:nsfw", "nsfw")
-
-        return decoded
+        return ", ".join([token for token in tokens if token])
 
     def rearrange_by_animagine(self, token_ids):
         (
@@ -60,7 +68,7 @@ class DartTokenizer:
             + other_general_part
             + rating_part
         )
-        special_tag_ids = self.convert_tokens_to_ids(SPECIAL_TAGS)
+        special_tag_ids = self.convert_tokens_to_ids(self.special_tags)
         rearranged_tokens = [
             token for token in rearranged_tokens if token not in special_tag_ids
         ]
@@ -68,28 +76,40 @@ class DartTokenizer:
         return rearranged_tokens
 
     def split_parts(self, token_ids):
-        def get_part(eos_token_id, remains_part):
-            part = []
-            for i, token_id in enumerate(remains_part):
-                if token_id == eos_token_id:
-                    return part, remains_part[i:]
-
-                part.append(token_id)
-
-            raise Exception("The provided EOS token was not found in the token_ids.")
-
-        # get each part
-        rating_part, remains = get_part(self.get_token_id(RATING_EOS), token_ids)
-        copyright_part, remains = get_part(self.get_token_id(COPYRIGHT_EOS), remains)
-        character_part, remains = get_part(self.get_token_id(CHARACTER_EOS), remains)
-        general_part, _ = get_part(self.get_token_id(GENERAL_EOS), remains)
+        sections = []
+        section = []
+        special_tokens = [
+            self.tokenizer.convert_tokens_to_ids(tag) for tag in self.special_tags
+        ]
+        for token_id in token_ids:
+            if token_id in special_tokens:
+                if len(section) > 0:
+                    sections.append(section)
+                section = []
+            else:
+                section.append(token_id)
+        copyright_part = sections[0]
+        character_part = sections[1]
+        rating_part = [
+            token_id
+            for token_id in token_ids
+            if token_id
+            in [
+                self.tokenizer.convert_tokens_to_ids(tag)
+                for tag in [
+                    RATING_SFW,
+                    RATING_GENERAL,
+                    RATING_SENSITIVE,
+                    RATING_NSFW,
+                    RATING_QUESTIONABLE,
+                    RATING_EXPLICIT,
+                ]
+            ]
+        ]
+        general_part = sections[2] + sections[3]
 
         # separete people tags (1girl, 1boy, no humans...)
         people_part, other_general_part = self.split_people_tokens_part(general_part)
-
-        # remove "rating:sfw"
-        sfw_tag_id = self.tokenizer.convert_tokens_to_ids("sfw")
-        rating_part = [token for token in rating_part if token != sfw_tag_id]
 
         return (
             rating_part,
@@ -120,3 +140,11 @@ class DartTokenizer:
                 if pattern.match(tag):
                     ban_tags.add(tag)
         return ban_tags
+
+    def decode_by_splited_parts(self, token_ids):
+        decoded_parts = [
+            self.decode(part, skip_special_tokens=False)
+            for part in self.split_parts(token_ids)
+        ]
+        decoded_parts[0] = decoded_parts[0].replace("<|", "").replace("|>", "")
+        return (*decoded_parts,)

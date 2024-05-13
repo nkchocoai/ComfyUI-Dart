@@ -1,4 +1,4 @@
-from ...dart.tokenizer import DartTokenizer
+from ...dart.tokenizer.tokenizer import DartTokenizer
 
 from ..base import BaseNode
 

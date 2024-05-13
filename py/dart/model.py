@@ -1,8 +1,9 @@
 import numpy as np
 import torch
+
 from transformers import AutoModelForCausalLM
 
-from ..dart.tokenizer import DartTokenizer
+from .tokenizer.tokenizer import DartTokenizer
 
 
 class DartModel:
@@ -53,4 +54,5 @@ class DartModel:
         generation_config.top_p = config["top_p"]
         generation_config.top_k = config["top_k"]
         generation_config.num_beams = config["num_beams"]
+        generation_config.do_sample = True
         return generation_config

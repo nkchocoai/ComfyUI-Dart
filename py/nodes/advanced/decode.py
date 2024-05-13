@@ -1,4 +1,4 @@
-from ...dart.tokenizer import DartTokenizer
+from ...dart.tokenizer.tokenizer import DartTokenizer
 
 from ..base import BaseNode
 
@@ -52,7 +52,5 @@ class DanbooruTagsTransformerDecodeBySplitedParts(BaseNode):
     FUNCTION = "decode_by_splited_parts"
 
     def decode_by_splited_parts(self, tokenizer: DartTokenizer, token_ids):
-        decoded_parts = [
-            tokenizer.decode(part) for part in tokenizer.split_parts(token_ids)
-        ]
+        decoded_parts = tokenizer.decode_by_splited_parts(token_ids)
         return (*decoded_parts,)

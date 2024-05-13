@@ -1,0 +1,839 @@
+{
+    "last_node_id": 30,
+    "last_link_id": 41,
+    "nodes": [
+        {
+            "id": 15,
+            "type": "CLIPTextEncode",
+            "pos": [
+                750,
+                450
+            ],
+            "size": {
+                "0": 210,
+                "1": 54
+            },
+            "flags": {},
+            "order": 11,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "clip",
+                    "type": "CLIP",
+                    "link": null
+                },
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 30,
+                    "widget": {
+                        "name": "text"
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "CONDITIONING",
+                    "type": "CONDITIONING",
+                    "links": [
+                        12
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "CLIPTextEncode"
+            },
+            "widgets_values": [
+                ""
+            ]
+        },
+        {
+            "id": 17,
+            "type": "Prompts Everywhere",
+            "pos": [
+                1030,
+                480
+            ],
+            "size": {
+                "0": 210,
+                "1": 46
+            },
+            "flags": {},
+            "order": 14,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "CONDITIONING",
+                    "type": "*",
+                    "link": 12,
+                    "color_on": "#FFA931"
+                },
+                {
+                    "name": "CONDITIONING",
+                    "type": "*",
+                    "link": 13,
+                    "slot_index": 1,
+                    "color_on": "#FFA931"
+                }
+            ],
+            "properties": {
+                "group_restricted": false,
+                "color_restricted": false,
+                "Node name for S&R": "Prompts Everywhere"
+            },
+            "widgets_values": []
+        },
+        {
+            "id": 18,
+            "type": "KSampler",
+            "pos": [
+                380,
+                780
+            ],
+            "size": {
+                "0": 315,
+                "1": 262
+            },
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "model",
+                    "type": "MODEL",
+                    "link": null
+                },
+                {
+                    "name": "positive",
+                    "type": "CONDITIONING",
+                    "link": null
+                },
+                {
+                    "name": "negative",
+                    "type": "CONDITIONING",
+                    "link": null
+                },
+                {
+                    "name": "latent_image",
+                    "type": "LATENT",
+                    "link": 14
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "LATENT",
+                    "type": "LATENT",
+                    "links": [
+                        15
+                    ],
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "KSampler"
+            },
+            "widgets_values": [
+                12345,
+                "fixed",
+                25,
+                7,
+                "euler_ancestral",
+                "normal",
+                1
+            ]
+        },
+        {
+            "id": 9,
+            "type": "Anything Everywhere3",
+            "pos": [
+                390,
+                90
+            ],
+            "size": {
+                "0": 210,
+                "1": 66
+            },
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "MODEL",
+                    "type": "*",
+                    "link": 6,
+                    "slot_index": 0,
+                    "color_on": "#B39DDB"
+                },
+                {
+                    "name": "CLIP",
+                    "type": "*",
+                    "link": 7,
+                    "color_on": "#FFD500"
+                },
+                {
+                    "name": "VAE",
+                    "type": "*",
+                    "link": 8,
+                    "slot_index": 2,
+                    "color_on": "#FF6E6E"
+                }
+            ],
+            "properties": {
+                "group_restricted": false,
+                "color_restricted": false,
+                "Node name for S&R": "Anything Everywhere3"
+            },
+            "widgets_values": []
+        },
+        {
+            "id": 16,
+            "type": "CLIPTextEncode",
+            "pos": [
+                760,
+                550
+            ],
+            "size": {
+                "0": 210,
+                "1": 54
+            },
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "clip",
+                    "type": "CLIP",
+                    "link": null
+                },
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 11,
+                    "widget": {
+                        "name": "text"
+                    },
+                    "slot_index": 1
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "CONDITIONING",
+                    "type": "CONDITIONING",
+                    "links": [
+                        13
+                    ],
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "CLIPTextEncode"
+            },
+            "widgets_values": [
+                ""
+            ]
+        },
+        {
+            "id": 20,
+            "type": "PreviewImage",
+            "pos": [
+                1050,
+                620
+            ],
+            "size": {
+                "0": 210,
+                "1": 246
+            },
+            "flags": {},
+            "order": 13,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "images",
+                    "type": "IMAGE",
+                    "link": 16,
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "PreviewImage"
+            }
+        },
+        {
+            "id": 19,
+            "type": "VAEDecode",
+            "pos": [
+                760,
+                700
+            ],
+            "size": {
+                "0": 210,
+                "1": 46
+            },
+            "flags": {},
+            "order": 10,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "samples",
+                    "type": "LATENT",
+                    "link": 15,
+                    "slot_index": 0
+                },
+                {
+                    "name": "vae",
+                    "type": "VAE",
+                    "link": null
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "IMAGE",
+                    "type": "IMAGE",
+                    "links": [
+                        16
+                    ],
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "VAEDecode"
+            }
+        },
+        {
+            "id": 14,
+            "type": "PromptUtilitiesLoadPreset",
+            "pos": [
+                380,
+                660
+            ],
+            "size": {
+                "0": 282.4613342285156,
+                "1": 58
+            },
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": [
+                        11
+                    ],
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "PromptUtilitiesLoadPreset"
+            },
+            "widgets_values": [
+                "sample\\animagineXL : neg"
+            ]
+        },
+        {
+            "id": 23,
+            "type": "ShowText|pysssss",
+            "pos": [
+                -7,
+                660
+            ],
+            "size": {
+                "0": 364,
+                "1": 132
+            },
+            "flags": {},
+            "order": 8,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 35,
+                    "widget": {
+                        "name": "text"
+                    },
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": null,
+                    "shape": 6
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "ShowText|pysssss"
+            },
+            "widgets_values": [
+                "",
+                "<|bos|><copyright>vocaloid</copyright><character>hatsune miku</character><|rating:sfw|><|aspect_ratio:tall|><|length:long|><general>1girl<|identity:none|><|input_end|>"
+            ]
+        },
+        {
+            "id": 11,
+            "type": "EmptyLatentImageFromPresetsSDXL",
+            "pos": [
+                20,
+                850
+            ],
+            "size": {
+                "0": 319.20001220703125,
+                "1": 122
+            },
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "outputs": [
+                {
+                    "name": "latent",
+                    "type": "LATENT",
+                    "links": [
+                        14
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                },
+                {
+                    "name": "w",
+                    "type": "INT",
+                    "links": null,
+                    "shape": 3
+                },
+                {
+                    "name": "h",
+                    "type": "INT",
+                    "links": null,
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "EmptyLatentImageFromPresetsSDXL"
+            },
+            "widgets_values": [
+                " 832 x 1216",
+                1
+            ]
+        },
+        {
+            "id": 7,
+            "type": "ShowText|pysssss",
+            "pos": [
+                746,
+                162
+            ],
+            "size": {
+                "0": 517.7396850585938,
+                "1": 127.30459594726562
+            },
+            "flags": {},
+            "order": 12,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "link": 31,
+                    "widget": {
+                        "name": "text"
+                    },
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": null,
+                    "shape": 6
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "ShowText|pysssss"
+            },
+            "widgets_values": [
+                "",
+                "vocaloid, hatsune miku, 1girl, :o, aqua eyes, aqua hair, aqua necktie, armpits, arms up, black skirt, blush, chibi, collared shirt, detached sleeves, excited, grey shirt, hair between eyes, hair ornament, looking at viewer, medium hair, miniskirt, musical note, necktie, open mouth, pleated skirt, shirt, simple background, skirt, sleeveless, sleeveless shirt, speech bubble, text background, thighhighs, twintails, white background, zettai ryouiki"
+            ]
+        },
+        {
+            "id": 26,
+            "type": "DanbooruTagsTransformerLoader",
+            "pos": [
+                26,
+                250
+            ],
+            "size": {
+                "0": 294.648193359375,
+                "1": 78
+            },
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "outputs": [
+                {
+                    "name": "DART_MODEL",
+                    "type": "DART_MODEL",
+                    "links": [
+                        33
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                },
+                {
+                    "name": "DART_TOKENIZER",
+                    "type": "DART_TOKENIZER",
+                    "links": [
+                        32
+                    ],
+                    "shape": 3,
+                    "slot_index": 1
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "DanbooruTagsTransformerLoader"
+            },
+            "widgets_values": [
+                "dart-v2-moe-sft"
+            ]
+        },
+        {
+            "id": 25,
+            "type": "DanbooruTagsTransformerGenerate",
+            "pos": [
+                387,
+                331
+            ],
+            "size": {
+                "0": 277,
+                "1": 273
+            },
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "model",
+                    "type": "DART_MODEL",
+                    "link": 33,
+                    "slot_index": 0
+                },
+                {
+                    "name": "tokenizer",
+                    "type": "DART_TOKENIZER",
+                    "link": 32
+                },
+                {
+                    "name": "setting",
+                    "type": "DART SETTING",
+                    "link": null,
+                    "slot_index": 2
+                },
+                {
+                    "name": "prompt",
+                    "type": "STRING",
+                    "link": 41,
+                    "widget": {
+                        "name": "prompt"
+                    },
+                    "slot_index": 3
+                },
+                {
+                    "name": "ban_tags",
+                    "type": "STRING",
+                    "link": null,
+                    "widget": {
+                        "name": "ban_tags"
+                    }
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": [
+                        30,
+                        31
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "DanbooruTagsTransformerGenerate"
+            },
+            "widgets_values": [
+                "<|bos|><rating>rating:sfw, rating:general</rating><copyright>original</copyright><character></character><general><|long|>1girl<|input_end|>",
+                12345,
+                "fixed",
+                false,
+                "",
+                ""
+            ]
+        },
+        {
+            "id": 8,
+            "type": "CheckpointLoaderSimple",
+            "pos": [
+                30,
+                90
+            ],
+            "size": {
+                "0": 315,
+                "1": 98
+            },
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "outputs": [
+                {
+                    "name": "MODEL",
+                    "type": "MODEL",
+                    "links": [
+                        6
+                    ],
+                    "shape": 3
+                },
+                {
+                    "name": "CLIP",
+                    "type": "CLIP",
+                    "links": [
+                        7
+                    ],
+                    "shape": 3,
+                    "slot_index": 1
+                },
+                {
+                    "name": "VAE",
+                    "type": "VAE",
+                    "links": [
+                        8
+                    ],
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "CheckpointLoaderSimple"
+            },
+            "widgets_values": [
+                "animagine-xl-3.1.safetensors"
+            ]
+        },
+        {
+            "id": 27,
+            "type": "DanbooruTagsTransformerComposePromptV2",
+            "pos": [
+                28,
+                384
+            ],
+            "size": {
+                "0": 291.947998046875,
+                "1": 220
+            },
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": [
+                        35,
+                        41
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "DanbooruTagsTransformerComposePromptV2"
+            },
+            "widgets_values": [
+                "vocaloid",
+                "hatsune miku",
+                "sfw",
+                "tall",
+                "long",
+                "1girl",
+                "none"
+            ]
+        }
+    ],
+    "links": [
+        [
+            6,
+            8,
+            0,
+            9,
+            0,
+            "MODEL"
+        ],
+        [
+            7,
+            8,
+            1,
+            9,
+            1,
+            "CLIP"
+        ],
+        [
+            8,
+            8,
+            2,
+            9,
+            2,
+            "VAE"
+        ],
+        [
+            11,
+            14,
+            0,
+            16,
+            1,
+            "STRING"
+        ],
+        [
+            12,
+            15,
+            0,
+            17,
+            0,
+            "CONDITIONING"
+        ],
+        [
+            13,
+            16,
+            0,
+            17,
+            1,
+            "CONDITIONING"
+        ],
+        [
+            14,
+            11,
+            0,
+            18,
+            3,
+            "LATENT"
+        ],
+        [
+            15,
+            18,
+            0,
+            19,
+            0,
+            "LATENT"
+        ],
+        [
+            16,
+            19,
+            0,
+            20,
+            0,
+            "IMAGE"
+        ],
+        [
+            19,
+            8,
+            1,
+            15,
+            0,
+            "CLIP"
+        ],
+        [
+            20,
+            8,
+            0,
+            18,
+            0,
+            "MODEL"
+        ],
+        [
+            21,
+            15,
+            0,
+            18,
+            1,
+            "CONDITIONING"
+        ],
+        [
+            22,
+            16,
+            0,
+            18,
+            2,
+            "CONDITIONING"
+        ],
+        [
+            23,
+            8,
+            1,
+            16,
+            0,
+            "CLIP"
+        ],
+        [
+            24,
+            8,
+            2,
+            19,
+            1,
+            "VAE"
+        ],
+        [
+            30,
+            25,
+            0,
+            15,
+            1,
+            "STRING"
+        ],
+        [
+            31,
+            25,
+            0,
+            7,
+            0,
+            "STRING"
+        ],
+        [
+            32,
+            26,
+            1,
+            25,
+            1,
+            "DART_TOKENIZER"
+        ],
+        [
+            33,
+            26,
+            0,
+            25,
+            0,
+            "DART_MODEL"
+        ],
+        [
+            35,
+            27,
+            0,
+            23,
+            0,
+            "STRING"
+        ],
+        [
+            41,
+            27,
+            0,
+            25,
+            3,
+            "STRING"
+        ]
+    ],
+    "groups": [],
+    "config": {},
+    "extra": {},
+    "version": 0.4
+}
