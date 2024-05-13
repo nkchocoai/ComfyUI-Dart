@@ -4,7 +4,8 @@ COPYRIGHT_BOS = "<copyright>"
 COPYRIGHT_EOS = "</copyright>"
 CHARACTER_BOS = "<character>"
 CHARACTER_EOS = "</character>"
-GENERAL = "<general>"
+GENERAL_BOS = "<general>"
+GENERAL_EOS = "</general>"
 
 INPUT_END = "<|input_end|>"
 
@@ -38,7 +39,8 @@ SPECIAL_TAGS_V2 = [
     COPYRIGHT_EOS,
     CHARACTER_BOS,
     CHARACTER_EOS,
-    GENERAL,
+    GENERAL_BOS,
+    GENERAL_EOS,
     INPUT_END,
     RATING_SFW,
     RATING_GENERAL,
