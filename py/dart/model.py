@@ -26,12 +26,17 @@ class DartModel:
 
         with torch.no_grad():
             generation_config = self.model.generation_config
+            generation_config.max_new_tokens = 128
+            generation_config.top_k = 20
             if config is not None:
                 generation_config = self.update_generation_config(
                     generation_config, config
                 )
             outputs = self.model.generate(
-                inputs, generation_config=generation_config, bad_words_ids=bad_words_ids
+                inputs,
+                generation_config=generation_config,
+                bad_words_ids=bad_words_ids,
+                do_sample=True,
             )
 
         return outputs
@@ -54,5 +59,4 @@ class DartModel:
         generation_config.top_p = config["top_p"]
         generation_config.top_k = config["top_k"]
         generation_config.num_beams = config["num_beams"]
-        generation_config.do_sample = True
         return generation_config
