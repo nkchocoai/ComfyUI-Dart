@@ -19,7 +19,13 @@ git clone https://github.com/nkchocoai/ComfyUI-Dart.git
 - Tags specified with `remove_tags` will not be output.
 
 ### Dart Compose Prompt
-- Output input "prompt" of Dart Generate node.
+- Output input "prompt" of Dart Generate node (dart-v1).
+
+### Dart Compose Prompt V2
+- Output input "prompt" of Dart Generate node (dart-v2).
+
+### Dart Get Aspect Ratio
+- Output aspect ratio tags for dart-v2 prompts from width and height.
 
 ### Dart Generation Config
 - Output input "config" of Dart Generate node.

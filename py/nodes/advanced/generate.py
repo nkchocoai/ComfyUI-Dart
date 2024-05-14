@@ -1,4 +1,5 @@
-from ...dart.generator import DartGenerator
+from ...dart.model import DartModel
+from ...dart.tokenizer.tokenizer import DartTokenizer
 
 from ..base import BaseNode
 
@@ -8,6 +9,8 @@ class DanbooruTagsTransformerGenerateAdvanced(BaseNode):
     def INPUT_TYPES(s):
         input_types = {
             "required": {
+                "model": ("DART_MODEL",),
+                "tokenizer": ("DART_TOKENIZER",),
                 "prompt": (
                     "STRING",
                     {
@@ -36,7 +39,15 @@ class DanbooruTagsTransformerGenerateAdvanced(BaseNode):
     RETURN_TYPES = ("DART_TOKEN_IDS",)
     FUNCTION = "generate"
 
-    def generate(self, prompt, seed, setting=None, ban_tags=""):
-        outputs = DartGenerator.generate(prompt, seed, setting, ban_tags)
+    def generate(
+        self,
+        model: DartModel,
+        tokenizer: DartTokenizer,
+        prompt,
+        seed,
+        setting=None,
+        ban_tags="",
+    ):
+        outputs = model.generate(tokenizer, prompt, seed, setting, ban_tags)
         token_ids = outputs[0]
         return (token_ids,)

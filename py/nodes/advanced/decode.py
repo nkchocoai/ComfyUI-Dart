@@ -1,4 +1,4 @@
-from ...dart.decode import DartDecoder
+from ...dart.tokenizer.tokenizer import DartTokenizer
 
 from ..base import BaseNode
 
@@ -8,6 +8,7 @@ class DanbooruTagsTransformerDecode(BaseNode):
     def INPUT_TYPES(s):
         input_types = {
             "required": {
+                "tokenizer": ("DART_TOKENIZER",),
                 "token_ids": ("DART_TOKEN_IDS",),
                 "skip_special_tokens": (
                     "BOOLEAN",
@@ -24,8 +25,13 @@ class DanbooruTagsTransformerDecode(BaseNode):
     RETURN_TYPES = ("STRING",)
     FUNCTION = "decode"
 
-    def decode(self, token_ids, skip_special_tokens=True):
-        result = DartDecoder.decode(token_ids, skip_special_tokens)
+    def decode(
+        self,
+        tokenizer: DartTokenizer,
+        token_ids,
+        skip_special_tokens=True,
+    ):
+        result = tokenizer.decode(token_ids, skip_special_tokens)
         return (result,)
 
 
@@ -34,6 +40,7 @@ class DanbooruTagsTransformerDecodeBySplitedParts(BaseNode):
     def INPUT_TYPES(s):
         input_types = {
             "required": {
+                "tokenizer": ("DART_TOKENIZER",),
                 "token_ids": ("DART_TOKEN_IDS",),
             },
         }
@@ -44,8 +51,6 @@ class DanbooruTagsTransformerDecodeBySplitedParts(BaseNode):
     RETURN_NAMES = ("rating", "copyright", "character", "people", "other general")
     FUNCTION = "decode_by_splited_parts"
 
-    def decode_by_splited_parts(self, token_ids):
-        decoded_parts = [
-            DartDecoder.decode(part) for part in DartDecoder.split_parts(token_ids)
-        ]
+    def decode_by_splited_parts(self, tokenizer: DartTokenizer, token_ids):
+        decoded_parts = tokenizer.decode_by_splited_parts(token_ids)
         return (*decoded_parts,)

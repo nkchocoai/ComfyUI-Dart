@@ -1,5 +1,10 @@
+from .py.nodes.loader import DanbooruTagsTransformerLoader
 from .py.nodes.generate import DanbooruTagsTransformerGenerate
 from .py.nodes.prompt import DanbooruTagsTransformerComposePrompt
+from .py.nodes.prompt_v2 import (
+    DanbooruTagsTransformerComposePromptV2,
+    DanbooruTagsTransformerGetAspectRatio,
+)
 from .py.nodes.config import DanbooruTagsTransformerGenerationConfig
 from .py.nodes.advanced.generate import DanbooruTagsTransformerGenerateAdvanced
 from .py.nodes.advanced.decode import (
@@ -13,8 +18,11 @@ from .py.nodes.advanced.token_ids import (
 from .py.nodes.ban_tags import DanbooruTagsTransformerBanTagsFromRegex
 
 NODE_CLASS_MAPPINGS = {
+    "DanbooruTagsTransformerLoader": DanbooruTagsTransformerLoader,
     "DanbooruTagsTransformerGenerate": DanbooruTagsTransformerGenerate,
     "DanbooruTagsTransformerComposePrompt": DanbooruTagsTransformerComposePrompt,
+    "DanbooruTagsTransformerComposePromptV2": DanbooruTagsTransformerComposePromptV2,
+    "DanbooruTagsTransformerGetAspectRatio": DanbooruTagsTransformerGetAspectRatio,
     "DanbooruTagsTransformerGenerationConfig": DanbooruTagsTransformerGenerationConfig,
     "DanbooruTagsTransformerBanTagsFromRegex": DanbooruTagsTransformerBanTagsFromRegex,
     # Advanced
@@ -26,8 +34,11 @@ NODE_CLASS_MAPPINGS = {
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
+    "DanbooruTagsTransformerLoader": "Dart Load",
     "DanbooruTagsTransformerGenerate": "Dart Generate",
     "DanbooruTagsTransformerComposePrompt": "Dart Compose Prompt",
+    "DanbooruTagsTransformerComposePromptV2": "Dart Compose Prompt V2",
+    "DanbooruTagsTransformerGetAspectRatio": "Dart Get Aspect Ratio",
     "DanbooruTagsTransformerGenerationConfig": "Dart Generation Config",
     "DanbooruTagsTransformerBanTagsFromRegex": "Dart Ban Tags From Regex",
     # Advanced
