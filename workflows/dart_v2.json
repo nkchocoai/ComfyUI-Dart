@@ -1,6 +1,6 @@
 {
-    "last_node_id": 30,
-    "last_link_id": 41,
+    "last_node_id": 35,
+    "last_link_id": 50,
     "nodes": [
         {
             "id": 15,
@@ -14,7 +14,7 @@
                 "1": 54
             },
             "flags": {},
-            "order": 11,
+            "order": 13,
             "mode": 0,
             "inputs": [
                 {
@@ -61,7 +61,7 @@
                 "1": 46
             },
             "flags": {},
-            "order": 14,
+            "order": 15,
             "mode": 0,
             "inputs": [
                 {
@@ -79,9 +79,9 @@
                 }
             ],
             "properties": {
+                "Node name for S&R": "Prompts Everywhere",
                 "group_restricted": false,
-                "color_restricted": false,
-                "Node name for S&R": "Prompts Everywhere"
+                "color_restricted": false
             },
             "widgets_values": []
         },
@@ -156,7 +156,7 @@
                 "1": 66
             },
             "flags": {},
-            "order": 7,
+            "order": 5,
             "mode": 0,
             "inputs": [
                 {
@@ -181,9 +181,9 @@
                 }
             ],
             "properties": {
+                "Node name for S&R": "Anything Everywhere3",
                 "group_restricted": false,
-                "color_restricted": false,
-                "Node name for S&R": "Anything Everywhere3"
+                "color_restricted": false
             },
             "widgets_values": []
         },
@@ -199,7 +199,7 @@
                 "1": 54
             },
             "flags": {},
-            "order": 5,
+            "order": 4,
             "mode": 0,
             "inputs": [
                 {
@@ -246,7 +246,7 @@
                 "1": 246
             },
             "flags": {},
-            "order": 13,
+            "order": 10,
             "mode": 0,
             "inputs": [
                 {
@@ -272,7 +272,7 @@
                 "1": 46
             },
             "flags": {},
-            "order": 10,
+            "order": 8,
             "mode": 0,
             "inputs": [
                 {
@@ -344,7 +344,7 @@
                 "1": 132
             },
             "flags": {},
-            "order": 8,
+            "order": 11,
             "mode": 0,
             "inputs": [
                 {
@@ -374,51 +374,6 @@
             ]
         },
         {
-            "id": 11,
-            "type": "EmptyLatentImageFromPresetsSDXL",
-            "pos": [
-                20,
-                850
-            ],
-            "size": {
-                "0": 319.20001220703125,
-                "1": 122
-            },
-            "flags": {},
-            "order": 1,
-            "mode": 0,
-            "outputs": [
-                {
-                    "name": "latent",
-                    "type": "LATENT",
-                    "links": [
-                        14
-                    ],
-                    "shape": 3,
-                    "slot_index": 0
-                },
-                {
-                    "name": "w",
-                    "type": "INT",
-                    "links": null,
-                    "shape": 3
-                },
-                {
-                    "name": "h",
-                    "type": "INT",
-                    "links": null,
-                    "shape": 3
-                }
-            ],
-            "properties": {
-                "Node name for S&R": "EmptyLatentImageFromPresetsSDXL"
-            },
-            "widgets_values": [
-                " 832 x 1216",
-                1
-            ]
-        },
-        {
             "id": 7,
             "type": "ShowText|pysssss",
             "pos": [
@@ -430,7 +385,7 @@
                 "1": 127.30459594726562
             },
             "flags": {},
-            "order": 12,
+            "order": 14,
             "mode": 0,
             "inputs": [
                 {
@@ -456,7 +411,7 @@
             },
             "widgets_values": [
                 "",
-                "vocaloid, hatsune miku, 1girl, :o, aqua eyes, aqua hair, aqua necktie, armpits, arms up, black skirt, blush, chibi, collared shirt, detached sleeves, excited, grey shirt, hair between eyes, hair ornament, looking at viewer, medium hair, miniskirt, musical note, necktie, open mouth, pleated skirt, shirt, simple background, skirt, sleeveless, sleeveless shirt, speech bubble, text background, thighhighs, twintails, white background, zettai ryouiki"
+                "vocaloid, hatsune miku, 1girl, aqua eyes, aqua hair, aqua necktie, arm up, armpits, black footwear, black skirt, blush, boots, breasts, detached sleeves, full body, grey shirt, holding, long hair, looking at viewer, medium breasts, miniskirt, narrow waist, necktie, open mouth, panties, pantyshot, pleated skirt, pointing, pointing up, shirt, simple background, skirt, sleeveless, smile, striped clothes, striped panties, thigh boots, thighhighs, twintails, underwear, very long hair"
             ]
         },
         {
@@ -471,7 +426,7 @@
                 "1": 78
             },
             "flags": {},
-            "order": 2,
+            "order": 1,
             "mode": 0,
             "outputs": [
                 {
@@ -501,6 +456,206 @@
             ]
         },
         {
+            "id": 8,
+            "type": "CheckpointLoaderSimple",
+            "pos": [
+                30,
+                90
+            ],
+            "size": {
+                "0": 315,
+                "1": 98
+            },
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "outputs": [
+                {
+                    "name": "MODEL",
+                    "type": "MODEL",
+                    "links": [
+                        6
+                    ],
+                    "shape": 3
+                },
+                {
+                    "name": "CLIP",
+                    "type": "CLIP",
+                    "links": [
+                        7
+                    ],
+                    "shape": 3,
+                    "slot_index": 1
+                },
+                {
+                    "name": "VAE",
+                    "type": "VAE",
+                    "links": [
+                        8
+                    ],
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "CheckpointLoaderSimple"
+            },
+            "widgets_values": [
+                "animagine-xl-3.1.safetensors"
+            ]
+        },
+        {
+            "id": 27,
+            "type": "DanbooruTagsTransformerComposePromptV2",
+            "pos": [
+                28,
+                384
+            ],
+            "size": {
+                "0": 291.947998046875,
+                "1": 220
+            },
+            "flags": {},
+            "order": 9,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "aspect_ratio",
+                    "type": "COMBO",
+                    "link": 48,
+                    "widget": {
+                        "name": "aspect_ratio"
+                    },
+                    "slot_index": 0
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "STRING",
+                    "type": "STRING",
+                    "links": [
+                        35,
+                        41
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "DanbooruTagsTransformerComposePromptV2"
+            },
+            "widgets_values": [
+                "vocaloid",
+                "hatsune miku",
+                "sfw",
+                "tall",
+                "long",
+                "1girl",
+                "none"
+            ]
+        },
+        {
+            "id": 35,
+            "type": "DanbooruTagsTransformerGetAspectRatio",
+            "pos": [
+                -236,
+                383
+            ],
+            "size": {
+                "0": 210,
+                "1": 54
+            },
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "inputs": [
+                {
+                    "name": "width",
+                    "type": "INT",
+                    "link": 49,
+                    "widget": {
+                        "name": "width"
+                    }
+                },
+                {
+                    "name": "height",
+                    "type": "INT",
+                    "link": 50,
+                    "widget": {
+                        "name": "height"
+                    },
+                    "slot_index": 1
+                }
+            ],
+            "outputs": [
+                {
+                    "name": "ASPECT_RATIOS",
+                    "type": "COMBO",
+                    "links": [
+                        48
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "DanbooruTagsTransformerGetAspectRatio"
+            },
+            "widgets_values": [
+                1024,
+                1024
+            ]
+        },
+        {
+            "id": 11,
+            "type": "EmptyLatentImageFromPresetsSDXL",
+            "pos": [
+                20,
+                850
+            ],
+            "size": {
+                "0": 319.20001220703125,
+                "1": 122
+            },
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "outputs": [
+                {
+                    "name": "latent",
+                    "type": "LATENT",
+                    "links": [
+                        14
+                    ],
+                    "shape": 3,
+                    "slot_index": 0
+                },
+                {
+                    "name": "w",
+                    "type": "INT",
+                    "links": [
+                        49
+                    ],
+                    "shape": 3,
+                    "slot_index": 1
+                },
+                {
+                    "name": "h",
+                    "type": "INT",
+                    "links": [
+                        50
+                    ],
+                    "shape": 3
+                }
+            ],
+            "properties": {
+                "Node name for S&R": "EmptyLatentImageFromPresetsSDXL"
+            },
+            "widgets_values": [
+                " 832 x 1216",
+                1
+            ]
+        },
+        {
             "id": 25,
             "type": "DanbooruTagsTransformerGenerate",
             "pos": [
@@ -512,7 +667,7 @@
                 "1": 273
             },
             "flags": {},
-            "order": 9,
+            "order": 12,
             "mode": 0,
             "inputs": [
                 {
@@ -567,98 +722,11 @@
             },
             "widgets_values": [
                 "<|bos|><rating>rating:sfw, rating:general</rating><copyright>original</copyright><character></character><general><|long|>1girl<|input_end|>",
-                12345,
+                0,
                 "fixed",
                 false,
                 "",
                 ""
-            ]
-        },
-        {
-            "id": 8,
-            "type": "CheckpointLoaderSimple",
-            "pos": [
-                30,
-                90
-            ],
-            "size": {
-                "0": 315,
-                "1": 98
-            },
-            "flags": {},
-            "order": 3,
-            "mode": 0,
-            "outputs": [
-                {
-                    "name": "MODEL",
-                    "type": "MODEL",
-                    "links": [
-                        6
-                    ],
-                    "shape": 3
-                },
-                {
-                    "name": "CLIP",
-                    "type": "CLIP",
-                    "links": [
-                        7
-                    ],
-                    "shape": 3,
-                    "slot_index": 1
-                },
-                {
-                    "name": "VAE",
-                    "type": "VAE",
-                    "links": [
-                        8
-                    ],
-                    "shape": 3
-                }
-            ],
-            "properties": {
-                "Node name for S&R": "CheckpointLoaderSimple"
-            },
-            "widgets_values": [
-                "animagine-xl-3.1.safetensors"
-            ]
-        },
-        {
-            "id": 27,
-            "type": "DanbooruTagsTransformerComposePromptV2",
-            "pos": [
-                28,
-                384
-            ],
-            "size": {
-                "0": 291.947998046875,
-                "1": 220
-            },
-            "flags": {},
-            "order": 4,
-            "mode": 0,
-            "outputs": [
-                {
-                    "name": "STRING",
-                    "type": "STRING",
-                    "links": [
-                        35,
-                        41
-                    ],
-                    "shape": 3,
-                    "slot_index": 0
-                }
-            ],
-            "properties": {
-                "Node name for S&R": "DanbooruTagsTransformerComposePromptV2"
-            },
-            "widgets_values": [
-                "vocaloid",
-                "hatsune miku",
-                "sfw",
-                "tall",
-                "long",
-                "1girl",
-                "none"
             ]
         }
     ],
@@ -830,6 +898,30 @@
             25,
             3,
             "STRING"
+        ],
+        [
+            48,
+            35,
+            0,
+            27,
+            0,
+            "COMBO"
+        ],
+        [
+            49,
+            11,
+            1,
+            35,
+            0,
+            "INT"
+        ],
+        [
+            50,
+            11,
+            2,
+            35,
+            1,
+            "INT"
         ]
     ],
     "groups": [],
