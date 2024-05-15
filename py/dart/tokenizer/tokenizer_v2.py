@@ -9,6 +9,9 @@ from ..defs.token_v2 import (
     RATING_NSFW,
     RATING_QUESTIONABLE,
     RATING_EXPLICIT,
+    COPYRIGHT_EOS,
+    CHARACTER_EOS,
+    GENERAL_EOS,
 )
 
 from ..defs.token import (
@@ -81,12 +84,15 @@ class DartTokenizerV2:
         special_tokens = [
             self.tokenizer.convert_tokens_to_ids(tag) for tag in self.special_tags
         ]
+        special_eos_tokens = [
+            self.tokenizer.convert_tokens_to_ids(tag)
+            for tag in [COPYRIGHT_EOS, CHARACTER_EOS, GENERAL_EOS]
+        ]
         for token_id in token_ids:
-            if token_id in special_tokens:
-                if len(section) > 0:
-                    sections.append(section)
+            if token_id in special_eos_tokens:
+                sections.append(section)
                 section = []
-            else:
+            elif token_id not in special_tokens:
                 section.append(token_id)
         copyright_part = sections[0]
         character_part = sections[1]
@@ -106,7 +112,8 @@ class DartTokenizerV2:
                 ]
             ]
         ]
-        general_part = sections[2] + sections[3]
+        general_part = sections[2]
+        print(sections)
 
         # separete people tags (1girl, 1boy, no humans...)
         people_part, other_general_part = self.split_people_tokens_part(general_part)
